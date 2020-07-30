@@ -6,3 +6,6 @@
 	path = uefi/VisualUefi
 	url = https://github.com/napocahv/VisualUefi.git
 	branch = napoca-custom
+[submodule "json"]
+	path = libraries/json
+	url = https://github.com/nlohmann/json.git
