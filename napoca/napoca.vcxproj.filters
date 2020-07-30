@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="boot\devres.c">
+      <Filter>Source Files\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="boot\init64.c">
+      <Filter>Source Files\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="boot\phase1.c">
+      <Filter>Source Files\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="boot\phase2.c">
+      <Filter>Source Files\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="boot\vmstate.c">
+      <Filter>Source Files\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="communication\comm_guest.c">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="communication\guestcommands.c">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="acpi_stub\acpiosxf.c">
+      <Filter>Source Files\acpi_stub_from_project_ACPIA</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debug_store.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\debugger.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\interpreter.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="apic\ipi.c">
+      <Filter>Source Files\apic</Filter>
+    </ClCompile>
+    <ClCompile Include="apic\lapic.c">
+      <Filter>Source Files\apic</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\cachemap.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\fastmap.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\heap.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\lookaside.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\mdl.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\memmgr.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\mmap.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\pagepool.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="version\version.c">
+      <Filter>Source Files\version</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\bios_handlers.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\guests.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\hooks.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\intro.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\msrcallbacks.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\pci.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\pci_tools.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\power.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\cleanup.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\cpuops.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\exceptions.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\global.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\handler.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\interrupt.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\mtrr.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\newcore.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\rwspinlock.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\spinlock.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\time.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="io\io.c">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\serial.c">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\vga.c">
+      <Filter>Source Files\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\autogen\napoca_cmdline.c">
+      <Filter>Source Files\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\buildsystem\interface\c\userdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\dbglocks.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\intronapoca.c">
+      <Filter>Source Files\introspection</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\guestenlight.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\emu.c">
+      <Filter>Source Files\kernel\emulator</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\emhv.c">
+      <Filter>Source Files\kernel\emulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_conv.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_memory.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_stdlib.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_string.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_fltused.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\hibernate.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\hibernate_clients.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\recspinlock.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\module_updates.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\intromodule.c">
+      <Filter>Source Files\introspection</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\code_scan.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\os_detect.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\gs_checks.c">
+      <Filter>Source Files\kernel\security checks</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\gs_utils.c">
+      <Filter>Source Files\kernel\security checks</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\introengine.c">
+      <Filter>Source Files\introspection</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\queue_ipc.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\perfstats.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_assert.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_conv.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_memory.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_snprintf.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_stdlib.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_string.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\data_structures\cx_lockless_queue.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\intelhwp.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\falloc.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\tas.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\hva.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\vamgr.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\spp.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\rtc_checks.c">
+      <Filter>Source Files\kernel\security checks</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\hypercall.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\simplechecksum.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="guests\virt_exceptions.c">
+      <Filter>Source Files\guests</Filter>
+    </ClCompile>
+    <ClCompile Include="base\aatree.c">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\bitmaps.c">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\boot\cpu_features.c">
+      <Filter>Source Files\common\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\boot\loader_interface.c">
+      <Filter>Source Files\common\boot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\communication\ringbuf.c">
+      <Filter>Source Files\common\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="external_interface\ringbuf_interface.c">
+      <Filter>Source Files\external_interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\communication\commands.c">
+      <Filter>Source Files\common\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\debug\memlog.c">
+      <Filter>Source Files\common\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel\vcpu.c">
+      <Filter>Source Files\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\ept.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\emu_debug.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\dumpers.c">
+      <Filter>Source Files\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introcpu.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introept.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introguests.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introheap.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introhvcall.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\intromisc.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\intromsrhook.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introphysmem.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introreghook.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introspinlock.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\glue_layer\introtimer.c">
+      <Filter>Source Files\introspection\glue_layer</Filter>
+    </ClCompile>
+    <ClCompile Include="introspection\intro_cb_wrappers.c">
+      <Filter>Source Files\introspection</Filter>
+    </ClCompile>
+    <ClCompile Include="crt\crt_min_imp.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="crt\nd_crt.c">
+      <Filter>Source Files\crt</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\heapfa.c">
+      <Filter>Source Files\memory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\hvstatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oemid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oemuserid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io\io.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io\serial.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\io\vga.h">
+      <Filter>Header Files\io</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\cleanup.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\cpuops.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\exceptions.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\interrupt.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\kernel.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\kerneldefs.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\kerneltypes.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\mtrr.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\newcore.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\rwspinlock.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\spinlock.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\time.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\vcpu.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\vmxdefs.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\public\dacia_types.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\bios_handlers.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\guests.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\hooks.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\intro.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\msrcallbacks.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\pci.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\pci_tools.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\power.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\cachedef.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\cachemap.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\fastmap.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\heap.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\lookaside.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\mdl.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\memmgr.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\memtags.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\mmap.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\pagepool.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\apic\ipi.h">
+      <Filter>Header Files\apic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\apic\lapic.h">
+      <Filter>Header Files\apic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\debug_store.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\debugger.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\interpreter.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\forcerebuild.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\hginfo.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\acpia\source\include\acpi.h">
+      <Filter>Header Files\acpi_stub_from_project_ACPIA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\acpia\source\include\acpiosxf.h">
+      <Filter>Header Files\acpi_stub_from_project_ACPIA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\acpia\source\include\actbl.h">
+      <Filter>Header Files\acpi_stub_from_project_ACPIA</Filter>
+    </ClInclude>
+    <ClInclude Include="include\communication\comm_guest.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\communication\guestcommands.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\devres.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\multiboot.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\phase1.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\phase2.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\vmstate.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\autogen\napoca_buildconfig.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\autogen\securitycfg.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\udtypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\autogen\napoca_cmdline.h">
+      <Filter>Header Files\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\disasm\inc\constants.h">
+      <Filter>Header Files\disasm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\disasm\inc\disasm.h">
+      <Filter>Header Files\disasm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\disasm\inc\disasmstatus.h">
+      <Filter>Header Files\disasm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\disasm\inc\disasmtypes.h">
+      <Filter>Header Files\disasm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\disasm\inc\registers.h">
+      <Filter>Header Files\disasm</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\dbglocks.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\intronapoca.h">
+      <Filter>Header Files\introspection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\guestenlight.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\emhv.h">
+      <Filter>Header Files\kernel\emulator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\emu.h">
+      <Filter>Header Files\kernel\emulator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\hibernate.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\hibernate_clients.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\recspinlock.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\intromodule.h">
+      <Filter>Header Files\introspection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\code_scan.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\os_detect.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\gs_utils.h">
+      <Filter>Header Files\kernel\security checks</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\introengine.h">
+      <Filter>Header Files\introspection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\queue_ipc.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\perfstats.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\intelhwp.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\falloc.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\tas.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\hva.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\vamgr.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\spp.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\hypercall.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\hypercall_status.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\simplechecksum.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\communication\ringbuf.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="include\guests\virt_exceptions.h">
+      <Filter>Header Files\guests</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\napoca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\boot.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\napocadefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\coredefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_external\buildsystem\interface\c\userdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\boot\bootdefs.h">
+      <Filter>Header Files\common\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\boot\cpu_features.h">
+      <Filter>Header Files\common\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\boot\loader_interface.h">
+      <Filter>Header Files\common\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\vmxdefs.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\external_interface\kernel_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\external_interface\kernel_interface.h">
+      <Filter>Header Files\common\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\cpudefs.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\communication\commands.h">
+      <Filter>Header Files\common\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\communication\ringbuf.h">
+      <Filter>Header Files\common\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\external_interface\ringbuf_interface.h">
+      <Filter>Header Files\common\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\external_interface\ringbuf_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\external_interface\wintypes_interface.h">
+      <Filter>Header Files\common\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\external_interface\wintypes_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\debug\memlog.h">
+      <Filter>Header Files\common\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\cpu_state.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\module_updates.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\napoca_compatibility.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\kernel\napoca_version.h">
+      <Filter>Header Files\common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\common\external_interface\disasm_types.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\ept.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\vmx.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\emu_debug.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\dumpers.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\vmx.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introcpu.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introept.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introguests.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introheap.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introhvcall.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\intromisc.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\intromsrhook.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introphysmem.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introreghook.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introspinlock.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\glue_layer\introtimer.h">
+      <Filter>Header Files\introspection\glue_layer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boot\init64.h">
+      <Filter>Header Files\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\queue_ipc_common.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\pcpu_common.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kernel\pcpu.h">
+      <Filter>Header Files\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="include\introspection\intro_cb_wrappers.h">
+      <Filter>Header Files\introspection</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\aatree.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\base\bitmaps.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory\heapfa.h">
+      <Filter>Header Files\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="include\debug\stackdump.h">
+      <Filter>Header Files\debug</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\ver.h">
+      <Filter>Build Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\doc.h">
+      <Filter>Doc Files</Filter>
+    </ClInclude>
+    <Text Include="..\docs\naming.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+    <Text Include="..\readme.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+    <Text Include="..\docs\stil_c_guide_2011.01.21.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+    <Text Include="..\docs\todo.txt">
+      <Filter>Doc Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Build Files">
+      <UniqueIdentifier>{ec6a18f3-f2c5-4978-9c04-ccdec07816ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Doc Files">
+      <UniqueIdentifier>{35a4b499-4a1b-4359-b732-749e460a5bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ce263f6f-ab36-4318-9cc8-0d1a4add282c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{eab4d1d6-2e8c-4ee2-84a9-b5bf70e054f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\acpi_stub_from_project_ACPIA">
+      <UniqueIdentifier>{fc4f7f64-e646-425b-90eb-6e8b174c3d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\apic">
+      <UniqueIdentifier>{ad5986ab-245b-435b-a396-691c380624d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\boot">
+      <UniqueIdentifier>{202b9186-8f88-4779-9589-1c888a9f78b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\communication">
+      <UniqueIdentifier>{b31eb1cf-d894-4fff-ac07-084624222b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\debug">
+      <UniqueIdentifier>{17fe3f86-1c27-482b-9a81-ef8da8ea2ab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Generated Files">
+      <UniqueIdentifier>{67c1d476-5a14-4b19-b354-45cffbdab76b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\guests">
+      <UniqueIdentifier>{33e9f465-4a1e-44eb-b4d4-a295859771a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\io">
+      <UniqueIdentifier>{d0fa40bf-b4d5-4068-8928-9f9f6328b7b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kernel">
+      <UniqueIdentifier>{e6545626-6272-4617-b2e5-3ff6a3872fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\memory">
+      <UniqueIdentifier>{5b73f95e-30a8-4026-b329-8b7bd76b3589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\public">
+      <UniqueIdentifier>{4f105a84-45a4-4e4e-b482-69159f2e04c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\acpi_stub_from_project_ACPIA">
+      <UniqueIdentifier>{a63e74ee-dba0-4dd8-b00d-742952389f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\apic">
+      <UniqueIdentifier>{264b0b5b-94ef-4e63-a15b-bb54b5b27289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\boot">
+      <UniqueIdentifier>{0747344b-ee3f-431e-bd1d-f365b5b55684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\communication">
+      <UniqueIdentifier>{dff4ddad-9dd3-4b99-9c76-0de912eefb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debug">
+      <UniqueIdentifier>{5f6a3831-41b3-41be-8777-f0c127bf2335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated Files">
+      <UniqueIdentifier>{3a0a81a8-1d71-4c34-956b-f4ce4ec194cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\guests">
+      <UniqueIdentifier>{b2d3499d-27aa-4c8c-9472-5c093f1b7cff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\io">
+      <UniqueIdentifier>{e918f236-a1a0-478d-8c6b-a80123473302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernel">
+      <UniqueIdentifier>{2e4b3b95-3b87-4555-86df-75131cac8053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\memory">
+      <UniqueIdentifier>{54bbc320-38af-4259-854b-d588d794e469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\version">
+      <UniqueIdentifier>{3d8e131d-d862-4a66-8d01-86ab921f00b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\disasm">
+      <UniqueIdentifier>{13335003-ab9e-4d95-8d7d-c4982c34815c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{fe41fe81-d7e1-4190-8274-84484e530497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\introspection">
+      <UniqueIdentifier>{560855a0-be27-4268-b228-d5a21fdf8951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\introspection">
+      <UniqueIdentifier>{faebb78f-4689-4dfe-a2d1-49f3f5d0b813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernel\emulator">
+      <UniqueIdentifier>{0fb480b2-89cc-45a5-bd95-fb03062831b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kernel\emulator">
+      <UniqueIdentifier>{efd67b30-10c4-4e2c-af79-cc8b75c18080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crt">
+      <UniqueIdentifier>{9b649637-3a26-43ba-ad26-4278404b9415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kernel\security checks">
+      <UniqueIdentifier>{335633c3-be2f-449b-83cf-62534d023938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kernel\security checks">
+      <UniqueIdentifier>{5fdb4c0b-162e-4ca9-90f9-375a44f97264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{096ad649-fb9c-4772-83e0-6f514622c4de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{8e4b053d-e8aa-4aa1-b51b-26b754c63f2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\boot">
+      <UniqueIdentifier>{b18adc11-165e-4426-9373-6ab9265c20cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{e2803d42-297c-4bab-a750-6fdeb43d35eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\boot">
+      <UniqueIdentifier>{02bb4c93-6327-406d-a1d4-869dbe0e0eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\kernel">
+      <UniqueIdentifier>{4f8962e0-c71b-406d-aa45-1e6318c647b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\external_interface">
+      <UniqueIdentifier>{52995e55-8573-4199-8633-c5235d8ab679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\communication">
+      <UniqueIdentifier>{be2ee914-aab2-460b-8d5f-22a8d7d811b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\communication">
+      <UniqueIdentifier>{1cbe3a2a-8f88-48ca-a047-e6223c89b041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\external_interface">
+      <UniqueIdentifier>{c48e034d-1064-4a2c-95dd-82725ea9cdfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external_interface">
+      <UniqueIdentifier>{aca3b1f9-956f-4f4b-a0e1-a18c7ecc36ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common\debug">
+      <UniqueIdentifier>{5a680721-b528-4aec-898b-834eef8d8026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\debug">
+      <UniqueIdentifier>{9ddf55fa-06ef-40a4-adef-14d32e97bf45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common\kernel">
+      <UniqueIdentifier>{5ee367a0-a99e-4966-9b99-af95815e2651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\introspection\glue_layer">
+      <UniqueIdentifier>{e4c6a74d-3b67-4a79-8688-944da62dcf12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\introspection\glue_layer">
+      <UniqueIdentifier>{73988d1c-1184-4813-8f48-f1d06b6b95de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm">
+      <UniqueIdentifier>{3837a798-a888-45c7-ae5f-b516bd7c9d51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base">
+      <UniqueIdentifier>{43aee201-f7e2-4ab9-a868-05107fd354db}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemCompare.asm">
+      <Filter>Source Files\crt</Filter>
+    </MASM>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemCopy.asm">
+      <Filter>Source Files\crt</Filter>
+    </MASM>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemScan.asm">
+      <Filter>Source Files\crt</Filter>
+    </MASM>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemSet.asm">
+      <Filter>Source Files\crt</Filter>
+    </MASM>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemZero.asm">
+      <Filter>Source Files\crt</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="boot\_init32.nasm">
+      <Filter>Source Files\boot</Filter>
+    </NASM>
+    <NASM Include="..\asmlib\pxe32.nasm" />
+    <NASM Include="..\asmlib\pxe32.nasm">
+      <Filter>Source Files\boot</Filter>
+    </NASM>
+    <NASM Include="boot\acpi_wakeup.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="boot\ap_initialization.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="bios_hooks.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\cpu.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\cpu_state_asm.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\cpu_state_defs.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\except.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\kernel_vmx.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="boot\legacy_boot.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\pcpu.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\_gs_checks.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+    <NASM Include="kernel\vcpu64.nasm">
+      <Filter>Source Files\asm</Filter>
+    </NASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\readme.md" />
+  </ItemGroup>
+</Project>

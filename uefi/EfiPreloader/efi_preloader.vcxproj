@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="preload.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="preload.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0C09779-788B-41FB-93C5-E8D325062DCA}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ProjectName>efi_preloader</ProjectName>
+    <RootNamespace>efi_preloader</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>
+    </CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeOutput>bdhvpreloader.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>bdhvpreloader</TargetName>
+    <TargetExt>.efi</TargetExt>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeOutput>bdhvpreloader.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>bdhvpreloader</TargetName>
+    <TargetExt>.efi</TargetExt>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetExt>.efi</TargetExt>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+    <GenerateManifest />
+    <TargetName>bdhvpreloader</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>bdhvpreloader</TargetName>
+    <TargetExt>.efi</TargetExt>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+    <GenerateManifest />
+    <LinkIncremental />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>EFI_BUILD;EFIBUILD;_PCD_GET_MODE_32_PcdOptionRomImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdRemovableMediaImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdFixedMediaImageVerificationPolicy=0x4</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel />
+      <TreatWChar_tAsBuiltInType />
+      <ForceConformanceInForLoopScope />
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CallingConvention />
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <ErrorReporting />
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(SolutionDir)_external/codex/inc/shared/native;$(ProjectDir)../../include;$(ProjectDir)../../;$(KIT_SHARED_IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SpecifySectionAttributes>.xdata,D</SpecifySectionAttributes>
+      <AdditionalDependencies>BaseCryptLib.lib;OpensslLib.lib;UefiHiiServicesLib.lib;UefiHiiLib.lib;UefiSortLib.lib;UefiRuntimeLib.lib;GlueLib.lib;UefiRuntimeServicesTableLib.lib;BaseSynchronizationLib.lib;UefiFileHandleLib.lib;BaseLib.lib;UefiDevicePathLibDevicePathProtocol.lib;BaseDebugPrintErrorLevelLib.lib;UefiBootServicesTableLib.lib;UefiDebugLibConOut.lib;BasePrintLib.lib;UefiMemoryAllocationLib.lib;UefiMemoryLib.lib;BaseCacheMaintenanceLib.lib;UefiApplicationEntryPoint.lib;UefiLib.lib;BaseCpuLib.lib;BaseMemoryLib.lib;IntrinsicLib.lib</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <SubSystem>EFI Application</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProfileGuidedDatabase />
+      <TypeLibraryResourceID />
+      <EntryPointSymbol>EfiMain</EntryPointSymbol>
+      <BaseAddress>0</BaseAddress>
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <MergeSections>.rdata=.data</MergeSections>
+      <LinkErrorReporting />
+      <SectionAlignment>32</SectionAlignment>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/OPT:ICF=10 /IGNORE:4001 /IGNORE:4254 /IGNORE:4281 %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\VisualUefi\EDK-II\$(Platform)\Release</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(SolutionDir)_external/codex/inc/shared/native;$(ProjectDir)../../include;$(ProjectDir)../../;$(KIT_SHARED_IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>EFI_BUILD;EFIBUILD;_PCD_GET_MODE_32_PcdOptionRomImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdRemovableMediaImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdFixedMediaImageVerificationPolicy=0x4</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel />
+      <TreatWChar_tAsBuiltInType />
+      <ForceConformanceInForLoopScope />
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CallingConvention />
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <ErrorReporting />
+    </ClCompile>
+    <Link>
+      <SpecifySectionAttributes>.xdata,D</SpecifySectionAttributes>
+      <AdditionalDependencies>BaseCryptLib.lib;OpensslLib.lib;UefiHiiServicesLib.lib;UefiHiiLib.lib;UefiSortLib.lib;UefiRuntimeLib.lib;GlueLib.lib;UefiRuntimeServicesTableLib.lib;BaseSynchronizationLib.lib;UefiFileHandleLib.lib;BaseLib.lib;UefiDevicePathLibDevicePathProtocol.lib;BaseDebugPrintErrorLevelLib.lib;UefiBootServicesTableLib.lib;UefiDebugLibConOut.lib;BasePrintLib.lib;UefiMemoryAllocationLib.lib;UefiMemoryLib.lib;BaseCacheMaintenanceLib.lib;UefiApplicationEntryPoint.lib;UefiLib.lib;BaseCpuLib.lib;BaseMemoryLib.lib;IntrinsicLib.lib</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <SubSystem>EFI Application</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProfileGuidedDatabase />
+      <TypeLibraryResourceID />
+      <EntryPointSymbol>EfiMain</EntryPointSymbol>
+      <BaseAddress>0</BaseAddress>
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <MergeSections>.rdata=.data</MergeSections>
+      <LinkErrorReporting />
+      <SectionAlignment>32</SectionAlignment>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/OPT:ICF=10 /IGNORE:4001 /IGNORE:4254 /IGNORE:4281 %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\VisualUefi\EDK-II\$(Platform)\Release</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

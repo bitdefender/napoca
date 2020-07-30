@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\SecurityPkg\VariableAuthenticated\RuntimeDxe\AuthService.c">
+      <Filter>Applications\GetSecureBoot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SecurityPkg\VariableAuthenticated\EsalVariableDxeSal\AuthService.c">
+      <Filter>Applications\GetSecureBoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries_EDK\DxeImageVerificationLib\DxeImageVerificationLib.c">
+      <Filter>Libraries\PeImageLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\PeImageLib\PeImageLib.c">
+      <Filter>Libraries\PeImageLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\PeImageLib\PeImagePki.c">
+      <Filter>Libraries\PeImageLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\MemDebugLib\MemDebugLib.c">
+      <Filter>Libraries\MemDebugLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\FileOperationsLib\FileOperationsLib.c">
+      <Filter>Libraries\FileOperationsLib</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples\RngTest\RngTest.c">
+      <Filter>Applications\TestApplication</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples\SetSecureBoot\SetSecureBoot.c">
+      <Filter>Applications\SetSecureBoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples\MemMaps\MemMaps.c">
+      <Filter>Applications\MemMaps</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples\GetSecureBoot\GetSecureBoot.c">
+      <Filter>Applications\GetSecureBoot</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{c948a68e-239b-4246-94b9-8849626bd60f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Applications">
+      <UniqueIdentifier>{5fa444de-37c6-437b-9c71-dd495afeee4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Applications\GetSecureBoot">
+      <UniqueIdentifier>{9436bc68-8e57-4bd2-92f0-76f539fd9de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\MemDebugLib">
+      <UniqueIdentifier>{37564ef0-491a-4862-a753-641b07da7151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\PeImageLib">
+      <UniqueIdentifier>{3df68b38-e5f7-4581-a92b-4a9f35be9747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Applications\MemMaps">
+      <UniqueIdentifier>{c625d743-02c1-430a-9c68-8d2e6ef2bc17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Applications\SetSecureBoot">
+      <UniqueIdentifier>{03138835-14dd-413b-b67b-87c7ccc6d2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Applications\TestApplication">
+      <UniqueIdentifier>{75ad91cc-3b10-4c2a-9ef9-129572cc80be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\FileOperationsLib">
+      <UniqueIdentifier>{75d796fa-30c1-4694-adaa-a87c2c6c4607}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libraries_EDK\DxeImageVerificationLib\DxeImageVerificationLib.h">
+      <Filter>Libraries\PeImageLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\PeImageLib\PeImageLib.h">
+      <Filter>Libraries\PeImageLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\MemDebugLib\MemDebugLib.h">
+      <Filter>Libraries\MemDebugLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\FileOperationsLib\FileOperationsLib.h">
+      <Filter>Libraries\FileOperationsLib</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

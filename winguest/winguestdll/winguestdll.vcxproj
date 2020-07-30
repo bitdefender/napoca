@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B4A82198-271B-4FCE-AA27-6CF4C7274521}</ProjectGuid>
+    <RootNamespace>winguestdll</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WindowsApplicationForDrivers10.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WindowsApplicationForDrivers10.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WindowsApplicationForDrivers10.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>WindowsApplicationForDrivers10.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\tools\nasm\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\_external\buildsystem\interface\c;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\um;$(ProjectDir)..\..\libraries\json\single_include\nlohmann;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_DLL_BUILD;_CONSOLE;_USRDLL;DLL_EXPORTS;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;WIN32;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>$(ProjectDir)trace.h</WppScanConfigurationData>
+      <DisableSpecificWarnings>4200;4201;4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Setupapi.lib;PowrProf.lib;version.lib;Newdev.lib;Wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\_external\buildsystem\interface\c;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\um;$(ProjectDir)..\..\libraries\json\single_include\nlohmann;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_DLL_BUILD;_CONSOLE;_USRDLL;DLL_EXPORTS;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;AMD64;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CallingConvention>Cdecl</CallingConvention>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>$(ProjectDir)trace.h</WppScanConfigurationData>
+      <DisableSpecificWarnings>4200;4201;4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Setupapi.lib;PowrProf.lib;version.lib;Newdev.lib;Wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP /MP %(AdditionalOptions)</AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\_external\buildsystem\interface\c;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\um;$(ProjectDir)..\..\libraries\json\single_include\nlohmann;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_DLL_BUILD;_CONSOLE;_USRDLL;DLL_EXPORTS;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>$(ProjectDir)trace.h</WppScanConfigurationData>
+      <DisableSpecificWarnings>4200;4201;4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Setupapi.lib;PowrProf.lib;version.lib;Newdev.lib;Wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/MP /MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\_external\buildsystem\interface\c;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\um;$(ProjectDir)..\..\libraries\json\single_include\nlohmann;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_DLL_BUILD;_CONSOLE;_USRDLL;DLL_EXPORTS;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;AMD64;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>$(ProjectDir)trace.h</WppScanConfigurationData>
+      <DisableSpecificWarnings>4200;4201;4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>Setupapi.lib;PowrProf.lib;version.lib;Newdev.lib;Wbemuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\autogen\efi_cmdline.c" />
+    <ClCompile Include="..\..\autogen\napoca_cmdline.c" />
+    <ClCompile Include="..\..\_external\buildsystem\interface\c\userdata.c" />
+    <ClCompile Include="..\..\_external\codex\src\um\cxqueueuser.c" />
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="bcd.cpp" />
+    <ClCompile Include="deploy.cpp" />
+    <ClCompile Include="crc32.cpp" />
+    <ClCompile Include="drvinstall.cpp" />
+    <ClCompile Include="grub_env.cpp" />
+    <ClCompile Include="event_timer.cpp" />
+    <ClCompile Include="libapis.cpp" />
+    <ClCompile Include="smbios.cpp" />
+    <ClCompile Include="helpers.cpp" />
+    <ClCompile Include="utils_kernel.cpp" />
+    <ClCompile Include="winguestdll.cpp" />
+    <ClCompile Include="wmi.cpp" />
+    <ClCompile Include="kerncomm.cpp" />
+    <ClCompile Include="kerncomm_int.cpp" />
+    <ClCompile Include="feedback.cpp" />
+    <ClCompile Include="load_monitor.cpp" />
+    <ClCompile Include="deploy_legacy.cpp" />
+    <ClCompile Include="deploy_uefi.cpp" />
+    <ClCompile Include="deploy_validation.cpp" />
+    <ClCompile Include="ccom_mgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\autogen\cmdline_templates.h" />
+    <ClInclude Include="..\..\autogen\install_files.h" />
+    <ClInclude Include="..\..\autogen\napoca_cmdline.h" />
+    <ClInclude Include="..\..\libraries\json\single_include\nlohmann\json.hpp" />
+    <ClInclude Include="..\..\_external\codex\inc\um\cxqueueuser.h" />
+    <ClInclude Include="..\..\_external\codex\inc\um\cx_um.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="bcd.h" />
+    <ClInclude Include="deploy.h" />
+    <ClInclude Include="crc32.h" />
+    <ClInclude Include="drvinstall.h" />
+    <ClInclude Include="external_interface\wintypes_interface.h" />
+    <ClInclude Include="feedback.h" />
+    <ClInclude Include="grub_env.h" />
+    <ClInclude Include="libapis_private.h" />
+    <ClInclude Include="event_timer.h" />
+    <ClInclude Include="libapis.h" />
+    <ClInclude Include="libapis_int.h" />
+    <ClInclude Include="..\common\reg_opts.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="trace.h" />
+    <ClInclude Include="helpers.h" />
+    <ClInclude Include="utils_kernel.h" />
+    <ClInclude Include="winguestdll.h" />
+    <ClInclude Include="wmi.h" />
+    <ClInclude Include="..\..\napoca\include\communication\napoca_compatibility.h" />
+    <ClInclude Include="..\..\napoca\include\communication\napoca_version.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="kerncomm.h" />
+    <ClInclude Include="kerncomm_int.h" />
+    <ClInclude Include="smbios.h" />
+    <ClInclude Include="load_monitor.h" />
+    <ClInclude Include="deploy_legacy.h" />
+    <ClInclude Include="deploy_uefi.h" />
+    <ClInclude Include="deploy_validation.h" />
+    <ClInclude Include="ccom_mgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\tools\nasm\nasm.targets" />
+  </ImportGroup>
+</Project>

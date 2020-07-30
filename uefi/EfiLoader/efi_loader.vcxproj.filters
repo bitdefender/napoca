@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="boot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hvlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="newload.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uefi_internal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\autogen\efi_cmdline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_external\buildsystem\interface\c\userdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug_guids.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\debug\memlog.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\boot\loader_interface.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_external\codex\src\shared\native\cx_ntstatus_to_string.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_external\codex\src\shared\native\cx_status_to_string.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\autogen\dacia_status_to_string.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="newload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pedefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uefi_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\autogen\efi_cmdline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_external\buildsystem\interface\c\userdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug_guids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\boot\loader_interface.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\autogen\efi_cmdline.txt">
+      <Filter>Additional Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Additional Files">
+      <UniqueIdentifier>{aeb0e8b3-20d9-4d3f-bea4-e5b784133f93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f5c22d26-bad9-401e-800b-d89c818891fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e3adf828-3ecd-4e02-b7e7-d90a677e4432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{6b8746d0-bce4-4c38-a595-72b3e2005eab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{33621ae8-82d4-444f-ab7c-50985bb3609b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\napoca\kernel\cpu_state_asm.nasm">
+      <Filter>Source Files</Filter>
+    </NASM>
+    <NASM Include="vasetup.nasm" />
+  </ItemGroup>
+</Project>

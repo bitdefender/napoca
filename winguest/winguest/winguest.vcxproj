@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{485381D4-1A57-4B94-B367-6CFE7C899E90}</ProjectGuid>
+    <TemplateGuid>{1bc93793-694f-48fe-9372-81e2b05556fd}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>winguest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <STAMPINF_VERSION Condition=" '$(STAMPINF_VERSION)' =='' ">*</STAMPINF_VERSION>
+  </PropertyGroup>
+  <PropertyGroup>
+    <STAMPINF_DATE Condition=" '$(STAMPINF_DATE)' =='' ">*</STAMPINF_DATE>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>9</KMDF_VERSION_MINOR>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>9</KMDF_VERSION_MINOR>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>9</KMDF_VERSION_MINOR>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>9</KMDF_VERSION_MINOR>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\tools\nasm\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <DiagnosticMode>false</DiagnosticMode>
+    <Inf2CatVerbose>false</Inf2CatVerbose>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <DiagnosticMode>false</DiagnosticMode>
+    <Inf2CatVerbose>false</Inf2CatVerbose>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <DiagnosticMode>false</DiagnosticMode>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <Inf2CatVerbose>false</Inf2CatVerbose>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <DiagnosticMode>false</DiagnosticMode>
+    <Inf2CatVerbose>false</Inf2CatVerbose>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\common;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\hvmi\introspection\introcore\include;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\km;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_BUILD;KERNEL_MODE;INTROCORE_NOCOMPAT;WIN32;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4201;4214</DisableSpecificWarnings>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>trace.h</WppScanConfigurationData>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\ntstrsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <Inf>
+      <EnableVerbose>false</EnableVerbose>
+      <KmdfVersionNumber>$(KMDF_VERSION_MAJOR).$(KMDF_VERSION_MINOR)</KmdfVersionNumber>
+      <TimeStamp>$(STAMPINF_VERSION)</TimeStamp>
+      <DateStamp>$(STAMPINF_DATE)</DateStamp>
+      <SpecifyDriverVerDirectiveVersion>true</SpecifyDriverVerDirectiveVersion>
+      <SpecifyDriverVerDirectiveDate>true</SpecifyDriverVerDirectiveDate>
+    </Inf>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <DriverSign />
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+      <Outputswitch>0</Outputswitch>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\common;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\hvmi\introspection\introcore\include;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\km;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_BUILD;KERNEL_MODE;INTROCORE_NOCOMPAT;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4201;4214</DisableSpecificWarnings>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>trace.h</WppScanConfigurationData>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\ntstrsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <Inf>
+      <EnableVerbose>false</EnableVerbose>
+      <KmdfVersionNumber>$(KMDF_VERSION_MAJOR).$(KMDF_VERSION_MINOR)</KmdfVersionNumber>
+      <TimeStamp>$(STAMPINF_VERSION)</TimeStamp>
+      <DateStamp>$(STAMPINF_DATE)</DateStamp>
+    </Inf>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <DriverSign />
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+      <Outputswitch>0</Outputswitch>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\common;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\hvmi\introspection\introcore\include;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\km;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_BUILD;KERNEL_MODE;INTROCORE_NOCOMPAT;AMD64;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4201;4214</DisableSpecificWarnings>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>trace.h</WppScanConfigurationData>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\ntstrsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <Inf>
+      <EnableVerbose>false</EnableVerbose>
+      <KmdfVersionNumber>$(KMDF_VERSION_MAJOR).$(KMDF_VERSION_MINOR)</KmdfVersionNumber>
+      <TimeStamp>$(STAMPINF_VERSION)</TimeStamp>
+      <DateStamp>$(STAMPINF_DATE)</DateStamp>
+    </Inf>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <DriverSign />
+    <DriverSign />
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\common;$(ProjectDir)..\..\include\public;$(ProjectDir)..\..\include;$(ProjectDir)..\..\include\common;$(ProjectDir)..\..\hvmi\include\public;$(ProjectDir)..\..\hvmi\introspection\introcore\include;$(ProjectDir)..\..\_external\codex\inc\shared;$(ProjectDir)..\..\_external\codex\inc\shared\native;$(ProjectDir)..\..\_external\codex\inc\km;$(ProjectDir)..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINGUEST_BUILD;KERNEL_MODE;INTROCORE_NOCOMPAT;AMD64;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4201;4214</DisableSpecificWarnings>
+      <WppEnabled>true</WppEnabled>
+      <WppScanConfigurationData>trace.h</WppScanConfigurationData>
+      <SDLCheck>true</SDLCheck>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\ntstrsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>FxDriverEntry</EntryPointSymbol>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <Inf>
+      <EnableVerbose>false</EnableVerbose>
+      <KmdfVersionNumber>$(KMDF_VERSION_MAJOR).$(KMDF_VERSION_MINOR)</KmdfVersionNumber>
+      <TimeStamp>$(STAMPINF_VERSION)</TimeStamp>
+      <DateStamp>$(STAMPINF_DATE)</DateStamp>
+    </Inf>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <DriverSign />
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(OutDir)$(TargetName).pdb" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(OutDir)$(TargetName).pdb" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(OutDir)$(TargetName).pdb" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(OutDir)$(TargetName).pdb" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(ProjectDir)$(ProjectName).cdf" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(ProjectDir)$(ProjectName).cdf" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(ProjectDir)$(ProjectName).cdf" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(ProjectDir)$(ProjectName).cdf" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(TargetPath)">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\boot\cpu_features.c" />
+    <ClCompile Include="..\..\common\communication\commands.c" />
+    <ClCompile Include="..\..\common\communication\ringbuf.c" />
+    <ClCompile Include="..\..\common\debug\memlog.c" />
+    <ClCompile Include="..\..\_external\codex\src\km\cxqueuekernel.c" />
+    <ClCompile Include="comm_hv.c" />
+    <ClCompile Include="driver.c" />
+    <ClCompile Include="init.c" />
+    <ClCompile Include="misc_utils.c" />
+    <ClCompile Include="undocumented.c" />
+    <ClCompile Include="updates.c" />
+    <ClCompile Include="umlibcomm.c" />
+    <ClCompile Include="umlibcommands.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\common\boot\cpu_features.h" />
+    <ClInclude Include="..\..\include\common\communication\commands.h" />
+    <ClInclude Include="..\..\include\common\communication\ringbuf.h" />
+    <ClInclude Include="..\..\include\common\external_interface\kernel_interface.h" />
+    <ClInclude Include="..\..\include\common\external_interface\ringbuf_interface.h" />
+    <ClInclude Include="..\..\include\common\external_interface\wintypes_interface.h" />
+    <ClInclude Include="..\..\_external\codex\inc\km\cxqueuekernel.h" />
+    <ClInclude Include="..\..\_external\codex\inc\km\cx_km.h" />
+    <ClInclude Include="..\common\consts.h" />
+    <ClInclude Include="..\common\reg_opts.h" />
+    <ClInclude Include="..\common\winguest_status.h" />
+    <ClInclude Include="comm_hv.h" />
+    <ClInclude Include="driver.h" />
+    <ClInclude Include="external_interface\kernel_interface.h" />
+    <ClInclude Include="external_interface\ringbuf_interface.h" />
+    <ClInclude Include="external_interface\wintypes_interface.h" />
+    <ClInclude Include="init.h" />
+    <ClInclude Include="memory.h" />
+    <ClInclude Include="misc_utils.h" />
+    <ClInclude Include="undocumented.h" />
+    <ClInclude Include="updates.h" />
+    <ClInclude Include="trace.h" />
+    <ClInclude Include="umlibcomm.h" />
+    <ClInclude Include="umlibcommands.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="winguest_types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\common\communication\vmcall32.nasm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </NASM>
+    <NASM Include="..\..\common\communication\vmcall64.nasm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </NASM>
+    <NASM Include="preload.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winguest.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="winguest.inx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scripts\winguest_install.cmd" />
+    <None Include="scripts\winguest_reinstall.cmd" />
+    <None Include="scripts\winguest_uninstall.cmd" />
+    <None Include="winguest.cdf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\tools\nasm\nasm.targets" />
+  </ImportGroup>
+</Project>

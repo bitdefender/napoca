@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\_external\buildsystem\interface\c\userdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\autogen\efi_cmdline.c">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="kerncomm.cpp">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="kerncomm_int.cpp">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+    <ClCompile Include="libapis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drvinstall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="winguestdll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\autogen\napoca_cmdline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils_kernel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deploy.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="deploy_legacy.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="deploy_uefi.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="grub_env.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="deploy_validation.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="crc32.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="smbios.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="wmi.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="event_timer.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="ccom_mgr.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="bcd.cpp">
+      <Filter>Source Files\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="load_monitor.cpp">
+      <Filter>Source Files\deployment</Filter>
+    </ClCompile>
+    <ClCompile Include="feedback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_external\codex\src\um\cxqueueuser.c">
+      <Filter>Source Files\communication</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libapis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libapis_int.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\reg_opts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="winguestdll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\napoca\include\communication\napoca_compatibility.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\napoca\include\communication\napoca_version.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="kerncomm.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="kerncomm_int.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\autogen\install_files.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\autogen\cmdline_templates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\autogen\napoca_cmdline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils_kernel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libapis_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external_interface\wintypes_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="deploy_validation.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="grub_env.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="deploy_uefi.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="deploy_legacy.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="deploy.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="ccom_mgr.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="bcd.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="wmi.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="crc32.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="load_monitor.h">
+      <Filter>Header Files\deployment</Filter>
+    </ClInclude>
+    <ClInclude Include="smbios.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="feedback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_external\codex\inc\um\cxqueueuser.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_external\codex\inc\um\cx_um.h">
+      <Filter>Header Files\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="event_timer.h">
+      <Filter>Header Files\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="drvinstall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libraries\json\single_include\nlohmann\json.hpp">
+      <Filter>Header Files\3rdParty</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c4851036-9866-438b-9700-86414180cb1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{f52138fd-0372-4b0f-a860-913e74ad921c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\communication">
+      <UniqueIdentifier>{6c9a386b-307c-46e5-8970-462064621107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e818e11f-8197-4a26-aed1-02d1d39ee3c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\communication">
+      <UniqueIdentifier>{7970e005-eefb-408a-b59e-1edea58affca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{82cc51b1-10d0-4baf-a12c-7778957f6d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3rdParty">
+      <UniqueIdentifier>{2529d745-b00e-4bc6-8108-3d2b1c8dddfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external_interface">
+      <UniqueIdentifier>{ff9e52fb-20af-40ee-abc1-817574466d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\deployment">
+      <UniqueIdentifier>{bd671f53-3abc-4bf8-9c0a-0e2059e922e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\deployment">
+      <UniqueIdentifier>{ec1d1db2-4ca3-4ae2-a729-a0171b2bd346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utilities">
+      <UniqueIdentifier>{8fe70dca-5f63-4412-93fd-40e0a678d97a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utilities">
+      <UniqueIdentifier>{d5fd3f44-8ea0-4c2e-a4d8-0e0f177c3860}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

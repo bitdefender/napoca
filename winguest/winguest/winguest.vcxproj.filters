@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="umlibcomm.h">
+      <Filter>Header Files\comm_um</Filter>
+    </ClInclude>
+    <ClInclude Include="umlibcommands.h">
+      <Filter>Header Files\comm_um</Filter>
+    </ClInclude>
+    <ClInclude Include="comm_hv.h">
+      <Filter>Header Files\comm_hv</Filter>
+    </ClInclude>
+    <ClInclude Include="winguest_types.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\consts.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\reg_opts.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\winguest_status.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc_utils.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="updates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="undocumented.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="external_interface\kernel_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\boot\cpu_features.h">
+      <Filter>Header Files\extern\boot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\communication\commands.h">
+      <Filter>Header Files\extern\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\communication\ringbuf.h">
+      <Filter>Header Files\extern\communication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\external_interface\kernel_interface.h">
+      <Filter>Header Files\extern\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\external_interface\wintypes_interface.h">
+      <Filter>Header Files\extern\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\common\external_interface\ringbuf_interface.h">
+      <Filter>Header Files\extern\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="external_interface\wintypes_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="external_interface\ringbuf_interface.h">
+      <Filter>Header Files\external_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_external\codex\inc\km\cx_km.h">
+      <Filter>Header Files\extern\commqueue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_external\codex\inc\km\cxqueuekernel.h">
+      <Filter>Header Files\extern\commqueue</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="driver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="umlibcomm.c">
+      <Filter>Source Files\comm_um</Filter>
+    </ClCompile>
+    <ClCompile Include="umlibcommands.c">
+      <Filter>Source Files\comm_um</Filter>
+    </ClCompile>
+    <ClCompile Include="comm_hv.c">
+      <Filter>Source Files\comm_hv</Filter>
+    </ClCompile>
+    <ClCompile Include="misc_utils.c">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="updates.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="undocumented.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\communication\ringbuf.c">
+      <Filter>Source Files\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\boot\cpu_features.c">
+      <Filter>Source Files\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\communication\commands.c">
+      <Filter>Source Files\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\debug\memlog.c">
+      <Filter>Source Files\extern</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_external\codex\src\km\cxqueuekernel.c">
+      <Filter>Source Files\extern\commqueue</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ba59719b-04f2-4ecd-a9d3-7c83c78301ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\comm_hv">
+      <UniqueIdentifier>{02a5f450-b18e-4134-8071-805878163ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\comm_um">
+      <UniqueIdentifier>{457e969e-8b9d-4cce-a5b2-f95cb1d13766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{5a9dcda7-3d6b-4cfa-afd0-b3e6e2efdfc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{7e359ad4-ca55-44f1-8010-13cca00e391b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5cae5d3f-10a5-4ee2-a654-31abb0504e7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\assembly">
+      <UniqueIdentifier>{4e677a29-04e1-4517-add1-4da9ba928a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\comm_hv">
+      <UniqueIdentifier>{7e4c2294-1fda-420e-b701-7e7df79f04d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\comm_um">
+      <UniqueIdentifier>{3dff4397-ef6a-4983-a4af-6b456e793825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{484f0d13-c81f-4585-9b06-a8e22b749beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Build Files">
+      <UniqueIdentifier>{1178498c-46e6-4f84-8cee-57b62afe711e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external_interface">
+      <UniqueIdentifier>{285db136-b957-4d9e-affd-5c3b172a79f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extern">
+      <UniqueIdentifier>{d4cb5000-da7d-465a-9b35-2c2f1a79cb3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\extern">
+      <UniqueIdentifier>{5b97bf18-1cf0-465c-bd06-9ecba50a7991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extern\boot">
+      <UniqueIdentifier>{6765800b-91e4-438d-892c-9d4ac69cedfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extern\communication">
+      <UniqueIdentifier>{6c17130a-3107-40d5-803e-315bab2bed0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extern\external_interface">
+      <UniqueIdentifier>{6d12e1e9-a4c3-4c32-be52-21cee68cdafd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\extern\commqueue">
+      <UniqueIdentifier>{e47dae7b-b047-4629-a06a-d2cb81fb29f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\extern\commqueue">
+      <UniqueIdentifier>{5a867bfd-d4b4-427a-9abf-e2e57b864619}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="winguest.rc">
+      <Filter>Build Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="winguest.inx">
+      <Filter>Build Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scripts\winguest_install.cmd" />
+    <None Include="scripts\winguest_reinstall.cmd" />
+    <None Include="scripts\winguest_uninstall.cmd" />
+    <None Include="winguest.cdf">
+      <Filter>Build Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\common\communication\vmcall32.nasm">
+      <Filter>Source Files\assembly</Filter>
+    </NASM>
+    <NASM Include="..\..\common\communication\vmcall64.nasm">
+      <Filter>Source Files\assembly</Filter>
+    </NASM>
+    <NASM Include="preload.nasm" />
+  </ItemGroup>
+</Project>

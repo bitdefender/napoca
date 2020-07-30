@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>efi_loader</ProjectName>
+    <ProjectGuid>{14F43CF1-5359-4092-92E1-7ECA99A6378E}</ProjectGuid>
+    <RootNamespace>efi_loader</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\tools\nasm\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>
+    </NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>
+    </NMakeCleanCommandLine>
+    <NMakeOutput>BdHvLoader.efi</NMakeOutput>
+    <NMakePreprocessorDefinitions>EFI_BUILD;WIN32;ILD;WIN32;ILD;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir);$(SolutionDir)Include;$(SolutionDir)Include/Public;$(SolutionDir)runtimelib;$(SolutionDir)runtimelib/Include;$(SolutionDir)Napoca/Include;$(SolutionDir)uefi\udk.latest\Loader\Application\LoaderVsUefi;$(SolutionDir)uefi\udk.latest\MdePkg;$(SolutionDir)uefi\udk.latest\MdePkg\Include;$(SolutionDir)uefi\udk.latest\MdePkg\Include\X64;$(SolutionDir)uefi\udk.latest\MdeModulePkg;$(SolutionDir)uefi\udk.latest\MdeModulePkg\Include;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg\Include;$(SolutionDir)uefi\udk.latest\Loader;$(SolutionDir)uefi\udk.latest\Loader\Include;$(SolutionDir)uefi\udk.latest\Loader\Include\Library;$(SolutionDir)uefi\udk.latest;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)include;$(SolutionDir)_external\codex\inc\shared\native;$(SolutionDir)runtimelib\include;$(SolutionDir)uefi\UDK.LATEST\Loader\Include;$(SolutionDir)OpenSSL\src\include;$(SolutionDir)OpenSSL\napoca_inc;$(SolutionDir)_external\buildsystem\interface\c;$(SolutionDir);$(SolutionDir)uefi\UDK.LATEST\Loader\Library\MemDebugLib;$(SolutionDir)_external\Loaders\Common;$(SolutionDir)uefi\UDK.LATEST\Loader\Library\FileOperationsLib;$(SolutionDir)uefi\UDK.LATEST\Loader\Include\Library;$(SolutionDir)uefi\UDK.LATEST\CryptoPkg\Include;$(SolutionDir)include\public;$(SolutionDir)uefi\UDK.LATEST\Loader\Library\PeImageLib;$(SolutionDir)uefi\VisualUefi\edk2\MdeModulePkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\SecurityPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include\X64;$(SolutionDir)uefi\VisualUefi\edk2\ShellPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\CryptoPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\IntelFrameworkPkg\Include;$(SolutionDir)uefi\VisualUefi\openssl\include\openssl;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include\Protocol</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'build', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'} &amp;&amp; cfg.pl /cfg "'$(SolutionDir)config\build.cfg'" /e /var postbuild /pre /data VC = {BuildType = 'build', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'rebuild', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}  &amp;&amp; cfg.pl /cfg "'$(SolutionDir)config\build.cfg'" /e /var postbuild /pre /data VC = {BuildType = 'build', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'clean', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeCleanCommandLine>
+    <NMakeOutput>BdHvLoader.efi</NMakeOutput>
+    <NMakePreprocessorDefinitions>EFI_BUILD;WIN32;ILD;WIN32;ILD;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir);$(SolutionDir)Include;$(SolutionDir)Include/Public;$(SolutionDir)runtimelib;$(SolutionDir)runtimelib/Include;$(SolutionDir)Napoca/Include;$(SolutionDir)uefi\udk.latest\Loader\Application\LoaderVsUefi;$(SolutionDir)uefi\udk.latest\MdePkg;$(SolutionDir)uefi\udk.latest\MdePkg\Include;$(SolutionDir)uefi\udk.latest\MdePkg\Include\X64;$(SolutionDir)uefi\udk.latest\MdeModulePkg;$(SolutionDir)uefi\udk.latest\MdeModulePkg\Include;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg\Include;$(SolutionDir)uefi\udk.latest\Loader;$(SolutionDir)uefi\udk.latest\Loader\Include;$(SolutionDir)uefi\udk.latest\Loader\Include\Library;$(SolutionDir)uefi\udk.latest;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <TargetName>bdhvloader</TargetName>
+    <TargetExt>.efi</TargetExt>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+    <GenerateManifest />
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>
+    </NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>
+    </NMakeCleanCommandLine>
+    <NMakeOutput>BdHvLoader.efi</NMakeOutput>
+    <NMakePreprocessorDefinitions>EFI_BUILD;WIN32;ILD;WIN32;ILD;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir);$(SolutionDir)Include;$(SolutionDir)Include/Public;$(SolutionDir)runtimelib;$(SolutionDir)runtimelib/Include;$(SolutionDir)Napoca/Include;$(SolutionDir)uefi\udk.latest\Loader\Application\LoaderVsUefi;$(SolutionDir)uefi\udk.latest\MdePkg;$(SolutionDir)uefi\udk.latest\MdePkg\Include;$(SolutionDir)uefi\udk.latest\MdePkg\Include\X64;$(SolutionDir)uefi\udk.latest\MdeModulePkg;$(SolutionDir)uefi\udk.latest\MdeModulePkg\Include;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg\Include;$(SolutionDir)uefi\udk.latest\Loader;$(SolutionDir)uefi\udk.latest\Loader\Include;$(SolutionDir)uefi\udk.latest\Loader\Include\Library;$(SolutionDir)uefi\udk.latest;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)include;$(SolutionDir)_external\codex\inc\shared\native;$(SolutionDir)runtimelib\include;$(SolutionDir)uefi\UDK.LATEST\Loader\Include;$(SolutionDir)OpenSSL\src\include;$(SolutionDir)OpenSSL\napoca_inc;$(SolutionDir)_external\buildsystem\interface\c;$(SolutionDir);$(SolutionDir)uefi\UDK.LATEST\Loader\Library\MemDebugLib;$(SolutionDir)_external\Loaders\Common;$(SolutionDir)uefi\UDK.LATEST\Loader\Library\FileOperationsLib;$(SolutionDir)uefi\UDK.LATEST\Loader\Include\Library;$(SolutionDir)uefi\UDK.LATEST\CryptoPkg\Include;$(SolutionDir)include\public;$(SolutionDir)uefi\UDK.LATEST\Loader\Library\PeImageLib;$(SolutionDir)uefi\VisualUefi\edk2\MdeModulePkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\SecurityPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include\X64;$(SolutionDir)uefi\VisualUefi\edk2\ShellPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\CryptoPkg\Include;$(SolutionDir)uefi\VisualUefi\edk2\IntelFrameworkPkg\Include;$(SolutionDir)uefi\VisualUefi\openssl\include\openssl;$(SolutionDir)uefi\VisualUefi\edk2\MdePkg\Include\Protocol</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'build', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'} &amp;&amp; cfg.pl /cfg "'$(SolutionDir)config\build.cfg'" /e /var postbuild /pre /data VC = {BuildType = 'build', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'rebuild', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}  &amp;&amp; cfg.pl /cfg "'$(SolutionDir)config\build.cfg'" /e /var postbuild /pre /data VC = {BuildType = 'build', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>cfg.pl /pre /e /cfg '$(SolutionDir)uefi\UDK.LATEST\Loader\build.cfg' /data VC = {BuildType = 'clean', EfiBin = 'BdHvLoader', EfiModuleName = 'Loader\Application\LoaderVsUefi\efi_loader_vs_uefi.inf', ConfigurationName = '$(Configuration)', DevEnvDir = '$(DevEnvDir)', FrameworkDir = '$(FrameworkDir)', FrameworkSDKDir = '$(FrameworkSDKDir)'FrameworkVersion='$(FrameworkVersion)', FxCopDir = '$(FxCopDir)', InputDir = '$(InputDir)', InputExt = '$(InputExt)', InputFileName = '$(InputFileName)', InputName = '$(InputName)', InputPath = '$(InputPath)', IntDir = '$(IntDir)', OutDir = '$(OutDir)', ParentName = '$(ParentName)', PlatformName = '$(PlatformName)', ProjectDir = '$(ProjectDir)', ProjectExt = '$(ProjectExt)', ProjectFileName = '$(ProjectFileName)', ProjectName = '$(ProjectName)', ProjectPath = '$(ProjectPath)', References = '$(References)', RemoteMachine = '$(RemoteMachine)', RootNamespace = '$(RootNamespace)', SafeInputName = '$(SafeInputName)', SafeParentName = '$(SafeParentName)', SafeRootNamespace = '$(SafeRootNamespace)', SolutionDir = '$(SolutionDir)', SolutionExt = '$(SolutionExt)', SolutionFileName = '$(SolutionFileName)', SolutionName = '$(SolutionName)', SolutionPath = '$(SolutionPath)', TargetDir = '$(TargetDir)', TargetExt = '$(TargetExt)', TargetFileName = '$(TargetFileName)', TargetFramework = '$(TargetFramework)', TargetName = '$(TargetName)', TargetPath = '$(TargetPath)', VCInstallDir = '$(VCInstallDir)', VSInstallDir = '$(VSInstallDir)', WindowsSdkDir = '$(WindowsSdkDir)', WindowsSdkDirIA64 = '$(WindowsSdkDirIA64)'}</NMakeCleanCommandLine>
+    <NMakeOutput>BdHvLoader.efi</NMakeOutput>
+    <NMakePreprocessorDefinitions>EFI_BUILD;WIN32;ILD;WIN32;ILD;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir);$(SolutionDir)Include;$(SolutionDir)Include/Public;$(SolutionDir)runtimelib;$(SolutionDir)runtimelib/Include;$(SolutionDir)Napoca/Include;$(SolutionDir)uefi\udk.latest\Loader\Application\LoaderVsUefi;$(SolutionDir)uefi\udk.latest\MdePkg;$(SolutionDir)uefi\udk.latest\MdePkg\Include;$(SolutionDir)uefi\udk.latest\MdePkg\Include\X64;$(SolutionDir)uefi\udk.latest\MdeModulePkg;$(SolutionDir)uefi\udk.latest\MdeModulePkg\Include;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg;$(SolutionDir)uefi\udk.latest\IntelFrameworkPkg\Include;$(SolutionDir)uefi\udk.latest\Loader;$(SolutionDir)uefi\udk.latest\Loader\Include;$(SolutionDir)uefi\udk.latest\Loader\Include\Library;$(SolutionDir)uefi\udk.latest;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean);$(TargetPath).manifest;$(OutDir)$(TargetName).tlb;$(OutDir)$(TargetName).pdb;$(TargetPath);$(OutDir)$(TargetName).bsc;$(OutDir)$(TargetName).ilk;$(TargetPath).intermediate.manifest</ExtensionsToDeleteOnClean>
+    <GenerateManifest />
+    <TargetName>bdhvloader</TargetName>
+    <TargetExt>.efi</TargetExt>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib;$(ProjectDir)..\..\napoca\include\kernel</IncludePaths>
+    </YASM>
+    <ClCompile>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/IntelFrameworkPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(ProjectDir)../../_external/codex/inc/shared/native;$(ProjectDir)../../_external/buildsystem/interface/c;$(ProjectDir)../../include;$(ProjectDir)../../include/public;$(ProjectDir)../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+    <ClCompile>
+      <CompileAsManaged />
+    </ClCompile>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;EFI_BUILD;EFIBUILD;__LOADER_IMPORTS__;UD_TYPES_INCLUDE="udtypes.h";LD_INTERFACE_INCLUDE="loader_interface_defs.h";_PCD_GET_MODE_32_PcdOptionRomImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdRemovableMediaImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdFixedMediaImageVerificationPolicy=0x4;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel />
+      <TreatWChar_tAsBuiltInType />
+      <ForceConformanceInForLoopScope />
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/IntelFrameworkPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(ProjectDir)../../_external/codex/inc/shared/native;$(ProjectDir)../../_external/buildsystem/interface/c;$(ProjectDir)../../include;$(ProjectDir)../../include/public;$(ProjectDir)../../;$(KIT_SHARED_IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>BaseCryptLib.lib;OpensslLib.lib;UefiHiiServicesLib.lib;UefiHiiLib.lib;UefiSortLib.lib;UefiRuntimeLib.lib;GlueLib.lib;UefiRuntimeServicesTableLib.lib;BaseSynchronizationLib.lib;UefiFileHandleLib.lib;BaseLib.lib;UefiDevicePathLibDevicePathProtocol.lib;BaseDebugPrintErrorLevelLib.lib;UefiBootServicesTableLib.lib;UefiDebugLibConOut.lib;BasePrintLib.lib;UefiMemoryAllocationLib.lib;UefiMemoryLib.lib;BaseCacheMaintenanceLib.lib;UefiApplicationEntryPoint.lib;UefiLib.lib;BaseCpuLib.lib;BaseMemoryLib.lib;IntrinsicLib.lib</AdditionalDependencies>
+    </Link>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <SubSystem>EFI Application</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProfileGuidedDatabase />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TypeLibraryResourceID />
+      <EntryPointSymbol>EfiMain</EntryPointSymbol>
+      <BaseAddress>0</BaseAddress>
+      <RandomizedBaseAddress />
+      <FixedBaseAddress />
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <MergeSections>.rdata=.data</MergeSections>
+      <LinkErrorReporting />
+      <SectionAlignment>32</SectionAlignment>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <SpecifySectionAttributes>.xdata,D</SpecifySectionAttributes>
+      <Profile>true</Profile>
+      <AdditionalOptions>/OPT:ICF=10 /IGNORE:4001 /IGNORE:4254  /IGNORE:4281 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\VisualUefi\EDK-II\$(Platform)\Release</AdditionalLibraryDirectories>
+    </Link>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib;$(ProjectDir)..\..\napoca\include\kernel</IncludePaths>
+    </YASM>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <NASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib;$(ProjectDir)..\..\napoca\include\kernel</IncludePaths>
+    </YASM>
+    <ClCompile>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/IntelFrameworkPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(ProjectDir)../../_external/codex/inc/shared/native;$(ProjectDir)../../_external/buildsystem/interface/c;$(ProjectDir)../../include;$(ProjectDir)../../include/public;$(ProjectDir)../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;EFI_BUILD;EFIBUILD;__LOADER_IMPORTS__;UD_TYPES_INCLUDE="udtypes.h";LD_INTERFACE_INCLUDE="loader_interface_defs.h";_PCD_GET_MODE_32_PcdOptionRomImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdRemovableMediaImageVerificationPolicy=0x4;_PCD_GET_MODE_32_PcdFixedMediaImageVerificationPolicy=0x4;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>SyncCThrow</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel />
+      <TreatWChar_tAsBuiltInType />
+      <ForceConformanceInForLoopScope />
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <CallingConvention />
+      <ErrorReporting />
+      <CompileAsManaged />
+      <MinimalRebuild>false</MinimalRebuild>
+      <ForcedIncludeFiles>$(ProjectDir)..\VisualUefi\EDK-II\BaseLib\vshacks.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>$(ProjectDir)../VisualUefi/edk2/MdePkg/Include;$(ProjectDir)../VisualUefi/edk2/MdePkg/Include/X64;$(ProjectDir)../VisualUefi/edk2/MdeModulePkg/Include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Include;$(ProjectDir)../VisualUefi/edk2/IntelFrameworkPkg/Include;$(ProjectDir)../VisualUefi/edk2/SecurityPkg/Library;$(ProjectDir)../VisualUefi/openssl/include;$(ProjectDir)../VisualUefi/edk2/CryptoPkg/Library/Include;$(ProjectDir)../Libraries;$(ProjectDir)../../_external/codex/inc/shared/native;$(ProjectDir)../../_external/buildsystem/interface/c;$(ProjectDir)../../include;$(ProjectDir)../../include/public;$(ProjectDir)../../;$(KIT_SHARED_IncludePath);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SpecifySectionAttributes>.xdata,D</SpecifySectionAttributes>
+      <AdditionalDependencies>BaseCryptLib.lib;OpensslLib.lib;UefiHiiServicesLib.lib;UefiHiiLib.lib;UefiSortLib.lib;UefiShellLib.lib;UefiRuntimeLib.lib;GlueLib.lib;UefiRuntimeServicesTableLib.lib;BaseSynchronizationLib.lib;UefiFileHandleLib.lib;BaseLib.lib;UefiDevicePathLibDevicePathProtocol.lib;BaseDebugPrintErrorLevelLib.lib;UefiBootServicesTableLib.lib;UefiDebugLibConOut.lib;BasePrintLib.lib;UefiMemoryAllocationLib.lib;UefiMemoryLib.lib;BaseCacheMaintenanceLib.lib;UefiApplicationEntryPoint.lib;UefiLib.lib;BaseCpuLib.lib;BaseMemoryLib.lib;IntrinsicLib.lib</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ManifestFile />
+      <AllowIsolation />
+      <EnableUAC />
+      <UACExecutionLevel />
+      <UACUIAccess />
+      <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
+      <SubSystem>EFI Application</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProfileGuidedDatabase />
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <TypeLibraryResourceID />
+      <EntryPointSymbol>EfiMain</EntryPointSymbol>
+      <BaseAddress>0</BaseAddress>
+      <RandomizedBaseAddress />
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <MergeSections>.rdata=.data</MergeSections>
+      <LinkErrorReporting />
+      <SectionAlignment>32</SectionAlignment>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalOptions>/OPT:ICF=10 /IGNORE:4001 /IGNORE:4254 /IGNORE:4281 %(AdditionalOptions)</AdditionalOptions>
+      <FixedBaseAddress />
+      <Profile>true</Profile>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\VisualUefi\EDK-II\$(Platform)\Release</AdditionalLibraryDirectories>
+    </Link>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib;$(ProjectDir)..\..\napoca\include\kernel</IncludePaths>
+    </YASM>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <NASM>
+      <IncludePaths>$(ProjectDir)..\..\;$(ProjectDir)..\..\asmlib\;$(ProjectDir)..\..\napoca\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\autogen\dacia_status_to_string.c" />
+    <ClCompile Include="..\..\autogen\efi_cmdline.c" />
+    <ClCompile Include="..\..\common\boot\loader_interface.c" />
+    <ClCompile Include="..\..\common\debug\memlog.c" />
+    <ClCompile Include="..\..\_external\buildsystem\interface\c\userdata.c" />
+    <ClCompile Include="..\..\_external\codex\src\shared\native\cx_ntstatus_to_string.c" />
+    <ClCompile Include="..\..\_external\codex\src\shared\native\cx_status_to_string.c" />
+    <ClCompile Include="boot.c" />
+    <ClCompile Include="debug.c" />
+    <ClCompile Include="debug_guids.c" />
+    <ClCompile Include="hvlib.c" />
+    <ClCompile Include="newload.c" />
+    <ClCompile Include="uefi_internal.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\..\napoca\kernel\cpu_state_asm.nasm" />
+    <NASM Include="vasetup.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\autogen\efi_cmdline.h" />
+    <ClInclude Include="..\..\include\common\boot\loader_interface.h" />
+    <ClInclude Include="..\..\_external\buildsystem\interface\c\userdata.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="debug_guids.h" />
+    <ClInclude Include="newload.h" />
+    <ClInclude Include="pedefs.h" />
+    <ClInclude Include="uefi_internal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\autogen\efi_cmdline.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\tools\nasm\nasm.targets" />
+  </ImportGroup>
+</Project>

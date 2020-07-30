@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cmdline">
+      <UniqueIdentifier>{7853377f-326e-4c19-9d11-889c0fdb58b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cmdline">
+      <UniqueIdentifier>{5b757c0d-08f1-4aed-9205-683e22fbdb93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dll_utils">
+      <UniqueIdentifier>{b50c8e77-7750-48a8-90f0-8a65b3f70379}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dll_utils">
+      <UniqueIdentifier>{31b40827-07c2-418d-b1cc-fd0912c02fd4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmdline.c">
+      <Filter>Source Files\cmdline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imports.c">
+      <Filter>Source Files\dll_utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\feedback.c">
+      <Filter>Source Files\dll_utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cmdline.h">
+      <Filter>Header Files\cmdline</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imports.h">
+      <Filter>Header Files\dll_utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\feedback.h">
+      <Filter>Header Files\dll_utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

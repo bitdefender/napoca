@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4A2CE21B-8644-4983-A58E-A87ACBD4EE4C}</ProjectGuid>
+    <RootNamespace>napoca</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <SpectreMitigation>false</SpectreMitigation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+    <Import Project="..\tools\nasm\nasm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.ilk%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+    <GenerateManifest>false</GenerateManifest>
+    <LinkDelaySign>false</LinkDelaySign>
+    <TargetExt>.bin</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <ExtensionsToDeleteOnClean>*.obj%3b*.ilk%3b*.tlb%3b*.tli%3b*.tlh%3b*.tmp%3b*.rsp%3b*.pgc%3b*.pgd%3b*.meta%3b$(TargetPath)</ExtensionsToDeleteOnClean>
+    <GenerateManifest>false</GenerateManifest>
+    <LinkDelaySign>false</LinkDelaySign>
+    <TargetExt>.bin</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkDelaySign>false</LinkDelaySign>
+    <TargetExt>.bin</TargetExt>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkDelaySign>false</LinkDelaySign>
+    <TargetExt>.bin</TargetExt>
+    <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\pxe;$(ProjectDir)..\asmlib</IncludePaths>
+    </YASM>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\include;$(ProjectDir)..\include\public;$(ProjectDir)..\hvmi\include\public;$(ProjectDir)..\hvmi\introspection\introcore\include;$(ProjectDir)..\_external\buildsystem\interface\c;$(ProjectDir)..\hvmi\bddisasm\inc;$(ProjectDir)..\_external\codex\inc\shared;$(ProjectDir)..\_external\codex\inc\shared\native;$(ProjectDir)..\acpica\source\include;$(ProjectDir)..\uefi\VisualUefi\openssl\include;$(ProjectDir)..\uefi\VisualUefi\edk2\CryptoPkg\Library\Include;$(ProjectDir)..\;$(KIT_SHARED_IncludePath)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NAPOCA_BUILD;CX_USE_SSE2;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;WIN64;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DisableSpecificWarnings>4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ALIGN:0x200 /IGNORE:4108 /IGNORE:4216 /MERGE:.BOOT=.text %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>bddisasm.lib;acpica_dbg.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).bin</OutputFile>
+      <AdditionalLibraryDirectories>..\bin\$(Platform)\$(Configuration);$(ProjectDir)..\hvmi\bddisasm\bin\$(Platform)\$(Configuration);$(ProjectDir)..\acpica\libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)$(ProjectName).map</MapFileName>
+      <SubSystem>Native</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <Driver>NotSet</Driver>
+      <EntryPointSymbol>IniInit64</EntryPointSymbol>
+      <BaseAddress>0x0000010000000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
+      <TargetMachine>NotSet</TargetMachine>
+      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include\;$(ProjectDir)..\include\public;$(ProjectDir)..\napoca\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)\..\asmlib\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <YASM>
+      <IncludePaths>$(ProjectDir)..\pxe;$(ProjectDir)..\asmlib</IncludePaths>
+      <Debug>true</Debug>
+    </YASM>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)..\include;$(ProjectDir)..\include\public;$(ProjectDir)..\hvmi\include\public;$(ProjectDir)..\hvmi\introspection\introcore\include;$(ProjectDir)..\_external\buildsystem\interface\c;$(ProjectDir)..\hvmi\bddisasm\inc;$(ProjectDir)..\_external\codex\inc\shared;$(ProjectDir)..\_external\codex\inc\shared\native;$(ProjectDir)..\acpica\source\include;$(ProjectDir)..\uefi\VisualUefi\openssl\include;$(ProjectDir)..\uefi\VisualUefi\edk2\CryptoPkg\Library\Include;$(ProjectDir)..\;$(KIT_SHARED_IncludePath)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NAPOCA_BUILD;CX_USE_SSE2;UD_TYPES_INCLUDE="udtypes.h";INTROCORE_NOCOMPAT;WIN64;NDEBUG;ACPI_NO_ERROR_MESSAGES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <PreprocessToFile>false</PreprocessToFile>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <DisableSpecificWarnings>4214</DisableSpecificWarnings>
+      <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ALIGN:0x200 /IGNORE:4108 /IGNORE:4216 /MERGE:.BOOT=.text %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>bddisasm.lib;acpica.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).bin</OutputFile>
+      <AdditionalLibraryDirectories>..\bin\$(Platform)\$(Configuration);$(ProjectDir)..\hvmi\bddisasm\bin\$(Platform)\$(Configuration);$(ProjectDir)..\acpica\libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)$(ProjectName).map</MapFileName>
+      <SubSystem>Native</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <Driver>NotSet</Driver>
+      <EntryPointSymbol>IniInit64</EntryPointSymbol>
+      <BaseAddress>0x0000010000000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
+      <TargetMachine>NotSet</TargetMachine>
+      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include\;$(ProjectDir)..\include\public;$(ProjectDir)..\napoca\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)\..\asmlib\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>"$(ProjectDir)..\_external\codex\inc\shared";"$(ProjectDir)..\_external\codex\inc\shared\native"</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ShowIncludes>false</ShowIncludes>
+      <DisableSpecificWarnings>4214</DisableSpecificWarnings>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <EntryPointSymbol>Init64</EntryPointSymbol>
+    </Link>
+    <Link>
+      <BaseAddress>0x0000010000000000</BaseAddress>
+    </Link>
+    <Link>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+    </Link>
+    <Link>
+      <FixedBaseAddress>true</FixedBaseAddress>
+    </Link>
+    <Link>
+      <TargetMachine>NotSet</TargetMachine>
+    </Link>
+    <Link>
+      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);"$(ProjectDir)..\_external\codex\bin\$(PlatformName)\$(ConfigurationName)\CodexNative.lib"</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include\;$(ProjectDir)..\include\public;$(ProjectDir)..\napoca\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)\..\asmlib\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd pre build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>$(SolutionDir)build_events_hook.cmd post build "$(ConfigurationName)" "$(PlatformName)" "$(DevEnvDir)" "$(InputDir)" "$(InputExt)" "$(InputFileName)" "$(InputName)" "$(InputPath)" "$(IntDir)" "$(OutDir)" "$(ParentName)" "$(ProjectDir)" "$(ProjectExt)" "$(ProjectFileName)" "$(ProjectName)" "$(ProjectPath)" "$(RemoteMachine)" "$(SafeInputName)" "$(SafeParentName)" "$(SafeRootNamespace)" "$(SolutionDir)" "$(SolutionExt)" "$(SolutionFileName)" "$(SolutionName)" "$(SolutionPath)" "$(TargetDir)" "$(TargetExt)" "$(TargetFileName)" "$(TargetFramework)" "$(TargetName)" "$(TargetPath)" "$(VCInstallDir)" "$(VSInstallDir)" "$(WindowsSdkDir)" "$(WindowsSdkDirIA64)" "$(PackageDir)" </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <AdditionalIncludeDirectories>"$(ProjectDir)..\_external\codex\inc\shared";"$(ProjectDir)..\_external\codex\inc\shared\native"</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ShowIncludes>false</ShowIncludes>
+      <DisableSpecificWarnings>4214</DisableSpecificWarnings>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <EntryPointSymbol>Init64</EntryPointSymbol>
+    </Link>
+    <Link>
+      <BaseAddress>0x0000010000000000</BaseAddress>
+    </Link>
+    <Link>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+    </Link>
+    <Link>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+    <Link>
+      <TargetMachine>NotSet</TargetMachine>
+    </Link>
+    <Link>
+      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);"$(ProjectDir)..\_external\codex\bin\$(PlatformName)\$(ConfigurationName)\CodexNative.lib ;"$(ProjectDir)..\_external\codex\bin\$(PlatformName)\$(ConfigurationName)\CodexNative.lib"</AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\include\;$(ProjectDir)..\include\public;$(ProjectDir)..\napoca\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <NASM>
+      <IncludePaths>$(ProjectDir);$(ProjectDir)\..\asmlib\</IncludePaths>
+    </NASM>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\autogen\napoca_buildconfig.h" />
+    <ClInclude Include="..\autogen\napoca_cmdline.h" />
+    <ClInclude Include="..\autogen\securitycfg.h" />
+    <ClInclude Include="..\include\common\boot\bootdefs.h" />
+    <ClInclude Include="..\include\common\boot\cpu_features.h" />
+    <ClInclude Include="..\include\common\boot\loader_interface.h" />
+    <ClInclude Include="..\include\common\communication\commands.h" />
+    <ClInclude Include="..\include\common\communication\ringbuf.h" />
+    <ClInclude Include="..\include\common\debug\memlog.h" />
+    <ClInclude Include="..\include\common\external_interface\disasm_types.h" />
+    <ClInclude Include="..\include\common\external_interface\kernel_interface.h" />
+    <ClInclude Include="..\include\common\external_interface\ringbuf_interface.h" />
+    <ClInclude Include="..\include\common\external_interface\wintypes_interface.h" />
+    <ClInclude Include="..\include\common\kernel\cpudefs.h" />
+    <ClInclude Include="..\include\common\kernel\cpu_state.h" />
+    <ClInclude Include="..\include\common\kernel\module_updates.h" />
+    <ClInclude Include="..\include\common\kernel\napoca_compatibility.h" />
+    <ClInclude Include="..\include\common\kernel\napoca_version.h" />
+    <ClInclude Include="..\include\common\kernel\vmxdefs.h" />
+    <ClInclude Include="..\include\udtypes.h" />
+    <ClInclude Include="..\_external\buildsystem\interface\c\userdata.h" />
+    <ClInclude Include="..\_external\disasm\inc\constants.h" />
+    <ClInclude Include="..\_external\disasm\inc\disasm.h" />
+    <ClInclude Include="..\_external\disasm\inc\disasmstatus.h" />
+    <ClInclude Include="..\_external\disasm\inc\disasmtypes.h" />
+    <ClInclude Include="..\_external\disasm\inc\registers.h" />
+    <ClInclude Include="include\base\aatree.h" />
+    <ClInclude Include="include\base\bitmaps.h" />
+    <ClInclude Include="include\boot\boot.h" />
+    <ClInclude Include="include\boot\init64.h" />
+    <ClInclude Include="include\communication\ringbuf.h" />
+    <ClInclude Include="include\core.h" />
+    <ClInclude Include="include\debug\dbglocks.h" />
+    <ClInclude Include="include\debug\emu_debug.h" />
+    <ClInclude Include="include\debug\perfstats.h" />
+    <ClInclude Include="include\debug\stackdump.h" />
+    <ClInclude Include="include\external_interface\kernel_interface.h" />
+    <ClInclude Include="include\external_interface\ringbuf_interface.h" />
+    <ClInclude Include="include\external_interface\wintypes_interface.h" />
+    <ClInclude Include="include\guests\code_scan.h" />
+    <ClInclude Include="include\guests\os_detect.h" />
+    <ClInclude Include="include\guests\virt_exceptions.h" />
+    <ClInclude Include="include\coredefs.h" />
+    <ClInclude Include="include\hvstatus.h" />
+    <ClInclude Include="include\introspection\glue_layer\introcpu.h" />
+    <ClInclude Include="include\introspection\glue_layer\introept.h" />
+    <ClInclude Include="include\introspection\glue_layer\introguests.h" />
+    <ClInclude Include="include\introspection\glue_layer\introheap.h" />
+    <ClInclude Include="include\introspection\glue_layer\introhvcall.h" />
+    <ClInclude Include="include\introspection\glue_layer\intromisc.h" />
+    <ClInclude Include="include\introspection\glue_layer\intromsrhook.h" />
+    <ClInclude Include="include\introspection\glue_layer\introphysmem.h" />
+    <ClInclude Include="include\introspection\glue_layer\introreghook.h" />
+    <ClInclude Include="include\introspection\glue_layer\introspinlock.h" />
+    <ClInclude Include="include\introspection\glue_layer\introtimer.h" />
+    <ClInclude Include="include\introspection\introengine.h" />
+    <ClInclude Include="include\introspection\intromodule.h" />
+    <ClInclude Include="include\introspection\intronapoca.h" />
+    <ClInclude Include="include\introspection\intro_cb_wrappers.h" />
+    <ClInclude Include="include\kernel\gs_utils.h" />
+    <ClInclude Include="include\kernel\guestenlight.h" />
+    <ClInclude Include="include\kernel\hypercall.h" />
+    <ClInclude Include="include\kernel\hypercall_status.h" />
+    <ClInclude Include="include\kernel\intelhwp.h" />
+    <ClInclude Include="include\kernel\pcpu_common.h" />
+    <ClInclude Include="include\kernel\queue_ipc.h" />
+    <ClInclude Include="include\kernel\queue_ipc_common.h" />
+    <ClInclude Include="include\kernel\vmx.h" />
+    <ClInclude Include="include\memory\falloc.h" />
+    <ClInclude Include="include\kernel\simplechecksum.h" />
+    <ClInclude Include="include\memory\heapfa.h" />
+    <ClInclude Include="include\memory\hibernate.h" />
+    <ClInclude Include="include\memory\hibernate_clients.h" />
+    <ClInclude Include="include\kernel\recspinlock.h" />
+    <ClInclude Include="include\memory\hva.h" />
+    <ClInclude Include="include\memory\ept.h" />
+    <ClInclude Include="include\memory\spp.h" />
+    <ClInclude Include="include\memory\tas.h" />
+    <ClInclude Include="include\memory\vamgr.h" />
+    <ClInclude Include="include\napoca.h" />
+    <ClInclude Include="include\napocadefs.h" />
+    <ClInclude Include="include\oemid.h" />
+    <ClInclude Include="include\oemuserid.h" />
+    <ClInclude Include="include\version.h" />
+    <ClInclude Include="include\boot\devres.h" />
+    <ClInclude Include="include\boot\multiboot.h" />
+    <ClInclude Include="include\boot\phase1.h" />
+    <ClInclude Include="include\boot\phase2.h" />
+    <ClInclude Include="include\boot\vmstate.h" />
+    <ClInclude Include="include\io\io.h" />
+    <ClInclude Include="include\io\serial.h" />
+    <ClInclude Include="include\io\vga.h" />
+    <ClInclude Include="..\acpia\source\include\acpi.h" />
+    <ClInclude Include="..\acpia\source\include\acpiosxf.h" />
+    <ClInclude Include="..\acpia\source\include\actbl.h" />
+    <ClInclude Include="include\kernel\cleanup.h" />
+    <ClInclude Include="include\kernel\cpuops.h" />
+    <ClInclude Include="include\kernel\emhv.h" />
+    <ClInclude Include="include\kernel\emu.h" />
+    <ClInclude Include="include\kernel\exceptions.h" />
+    <ClInclude Include="include\kernel\interrupt.h" />
+    <ClInclude Include="include\kernel\kernel.h" />
+    <ClInclude Include="include\kernel\kerneldefs.h" />
+    <ClInclude Include="include\kernel\kerneltypes.h" />
+    <ClInclude Include="include\kernel\mtrr.h" />
+    <ClInclude Include="include\kernel\newcore.h" />
+    <ClInclude Include="include\kernel\pcpu.h" />
+    <ClInclude Include="include\kernel\rwspinlock.h" />
+    <ClInclude Include="include\kernel\spinlock.h" />
+    <ClInclude Include="include\kernel\time.h" />
+    <ClInclude Include="include\kernel\vcpu.h" />
+    <ClInclude Include="include\kernel\vmxdefs.h" />
+    <ClInclude Include="include\memory\cachedef.h" />
+    <ClInclude Include="include\memory\cachemap.h" />
+    <ClInclude Include="include\memory\fastmap.h" />
+    <ClInclude Include="include\memory\heap.h" />
+    <ClInclude Include="include\memory\lookaside.h" />
+    <ClInclude Include="include\memory\mdl.h" />
+    <ClInclude Include="include\memory\memmgr.h" />
+    <ClInclude Include="include\memory\memtags.h" />
+    <ClInclude Include="include\memory\mmap.h" />
+    <ClInclude Include="include\memory\pagepool.h" />
+    <ClInclude Include="include\apic\ipi.h" />
+    <ClInclude Include="include\apic\lapic.h" />
+    <ClInclude Include="include\guests\bios_handlers.h" />
+    <ClInclude Include="include\guests\guests.h" />
+    <ClInclude Include="include\guests\hooks.h" />
+    <ClInclude Include="include\guests\intro.h" />
+    <ClInclude Include="include\guests\msrcallbacks.h" />
+    <ClInclude Include="include\guests\pci.h" />
+    <ClInclude Include="include\guests\pci_tools.h" />
+    <ClInclude Include="include\guests\power.h" />
+    <ClInclude Include="include\communication\comm_guest.h" />
+    <ClInclude Include="include\communication\guestcommands.h" />
+    <ClInclude Include="include\debug\dumpers.h" />
+    <ClInclude Include="include\debug\debug_store.h" />
+    <ClInclude Include="include\debug\debugger.h" />
+    <ClInclude Include="include\debug\interpreter.h" />
+    <ClInclude Include="..\include\public\dacia_types.h" />
+    <ClInclude Include="include\forcerebuild.h" />
+    <ClInclude Include="..\include\hginfo.h" />
+    <ClInclude Include="..\include\ver.h" />
+    <ClInclude Include="include\doc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\autogen\napoca_cmdline.c" />
+    <ClCompile Include="..\common\boot\cpu_features.c" />
+    <ClCompile Include="..\common\boot\loader_interface.c" />
+    <ClCompile Include="..\common\communication\commands.c" />
+    <ClCompile Include="..\common\communication\ringbuf.c">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ShowIncludes>
+    </ClCompile>
+    <ClCompile Include="..\common\debug\memlog.c">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ShowIncludes>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ShowIncludes>
+    </ClCompile>
+    <ClCompile Include="..\_external\buildsystem\interface\c\userdata.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_assert.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_conv.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_memory.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_snprintf.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_stdlib.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\crt\native_crt_string.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\data_structures\cx_lockless_queue.c" />
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_conv.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_memory.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_stdlib.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_crt_string.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_external\codex\src\shared\native\wrappers\crt\wrapper_fltused.c" />
+    <ClCompile Include="base\aatree.c" />
+    <ClCompile Include="base\bitmaps.c" />
+    <ClCompile Include="crt\crt_min_imp.c" />
+    <ClCompile Include="crt\nd_crt.c" />
+    <ClCompile Include="debug\dbglocks.c" />
+    <ClCompile Include="debug\emu_debug.c" />
+    <ClCompile Include="debug\perfstats.c" />
+    <ClCompile Include="boot\devres.c" />
+    <ClCompile Include="boot\init64.c" />
+    <ClCompile Include="boot\phase1.c" />
+    <ClCompile Include="boot\phase2.c" />
+    <ClCompile Include="boot\vmstate.c" />
+    <ClCompile Include="external_interface\ringbuf_interface.c" />
+    <ClCompile Include="guests\code_scan.c" />
+    <ClCompile Include="guests\os_detect.c" />
+    <ClCompile Include="guests\virt_exceptions.c" />
+    <ClCompile Include="introspection\glue_layer\introcpu.c" />
+    <ClCompile Include="introspection\glue_layer\introept.c" />
+    <ClCompile Include="introspection\glue_layer\introguests.c" />
+    <ClCompile Include="introspection\glue_layer\introheap.c" />
+    <ClCompile Include="introspection\glue_layer\introhvcall.c" />
+    <ClCompile Include="introspection\glue_layer\intromisc.c" />
+    <ClCompile Include="introspection\glue_layer\intromsrhook.c" />
+    <ClCompile Include="introspection\glue_layer\introphysmem.c" />
+    <ClCompile Include="introspection\glue_layer\introreghook.c" />
+    <ClCompile Include="introspection\glue_layer\introspinlock.c" />
+    <ClCompile Include="introspection\glue_layer\introtimer.c" />
+    <ClCompile Include="introspection\introengine.c" />
+    <ClCompile Include="introspection\intromodule.c" />
+    <ClCompile Include="introspection\intronapoca.c" />
+    <ClCompile Include="introspection\intro_cb_wrappers.c" />
+    <ClCompile Include="io\io.c" />
+    <ClCompile Include="io\serial.c" />
+    <ClCompile Include="io\vga.c" />
+    <ClCompile Include="acpi_stub\acpiosxf.c" />
+    <ClCompile Include="kernel\cleanup.c" />
+    <ClCompile Include="kernel\cpuops.c" />
+    <ClCompile Include="kernel\emhv.c" />
+    <ClCompile Include="kernel\emu.c" />
+    <ClCompile Include="kernel\exceptions.c" />
+    <ClCompile Include="kernel\global.c" />
+    <ClCompile Include="kernel\gs_checks.c" />
+    <ClCompile Include="kernel\gs_utils.c" />
+    <ClCompile Include="kernel\guestenlight.c" />
+    <ClCompile Include="kernel\handler.c" />
+    <ClCompile Include="kernel\hypercall.c" />
+    <ClCompile Include="kernel\intelhwp.c" />
+    <ClCompile Include="kernel\interrupt.c" />
+    <ClCompile Include="kernel\queue_ipc.c" />
+    <ClCompile Include="kernel\module_updates.c" />
+    <ClCompile Include="kernel\mtrr.c" />
+    <ClCompile Include="kernel\newcore.c" />
+    <ClCompile Include="kernel\recspinlock.c" />
+    <ClCompile Include="kernel\rtc_checks.c" />
+    <ClCompile Include="kernel\rwspinlock.c" />
+    <ClCompile Include="kernel\simplechecksum.c" />
+    <ClCompile Include="kernel\spinlock.c" />
+    <ClCompile Include="kernel\time.c" />
+    <ClCompile Include="kernel\vcpu.c" />
+    <ClCompile Include="memory\cachemap.c" />
+    <ClCompile Include="memory\falloc.c" />
+    <ClCompile Include="memory\fastmap.c" />
+    <ClCompile Include="memory\heap.c" />
+    <ClCompile Include="memory\heapfa.c" />
+    <ClCompile Include="memory\hibernate.c" />
+    <ClCompile Include="memory\hibernate_clients.c" />
+    <ClCompile Include="memory\hva.c" />
+    <ClCompile Include="memory\lookaside.c" />
+    <ClCompile Include="memory\mdl.c" />
+    <ClCompile Include="memory\memmgr.c" />
+    <ClCompile Include="memory\mmap.c" />
+    <ClCompile Include="memory\ept.c" />
+    <ClCompile Include="memory\pagepool.c" />
+    <ClCompile Include="memory\spp.c" />
+    <ClCompile Include="memory\tas.c" />
+    <ClCompile Include="memory\vamgr.c" />
+    <ClCompile Include="guests\bios_handlers.c" />
+    <ClCompile Include="guests\guests.c" />
+    <ClCompile Include="guests\hooks.c" />
+    <ClCompile Include="guests\intro.c" />
+    <ClCompile Include="guests\msrcallbacks.c" />
+    <ClCompile Include="guests\pci.c" />
+    <ClCompile Include="guests\pci_tools.c" />
+    <ClCompile Include="guests\power.c" />
+    <ClCompile Include="apic\ipi.c" />
+    <ClCompile Include="apic\lapic.c" />
+    <ClCompile Include="communication\comm_guest.c" />
+    <ClCompile Include="communication\guestcommands.c" />
+    <ClCompile Include="debug\dumpers.c" />
+    <ClCompile Include="debug\debug_store.c" />
+    <ClCompile Include="debug\debugger.c" />
+    <ClCompile Include="debug\interpreter.c" />
+    <ClCompile Include="version\version.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <NASM Include="..\asmlib\pxe32.nasm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </NASM>
+    <NASM Include="kernel\except.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="boot\_init32.nasm">
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\pxe\pxe32.yasm</AdditionalDependencies>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalOptions>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\pxe\pxe32.yasm</AdditionalDependencies>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="boot\acpi_wakeup.nasm">
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\pxe\asmlib.yasm;$(ProjectDir)..\pxe\loader_interface.yasm</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\pxe\asmlib.yasm;$(ProjectDir)..\pxe\loader_interface.yasm</AdditionalDependencies>
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="boot\ap_initialization.nasm">
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\pxe\system.yasm;$(ProjectDir)..\pxe\loader_interface.yasm</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\pxe\system.yasm;$(ProjectDir)..\pxe\loader_interface.yasm</AdditionalDependencies>
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\cpu.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\cpu_state_asm.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\cpu_state_defs.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\kernel_vmx.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="bios_hooks.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="boot\legacy_boot.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\pcpu.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\vcpu64.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+    <NASM Include="kernel\_gs_checks.nasm">
+      <FileType>Document</FileType>
+    </NASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\docs\naming.txt" />
+    <Text Include="..\readme.txt" />
+    <Text Include="..\docs\stil_c_guide_2011.01.21.txt" />
+    <Text Include="..\docs\todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DEBUG</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemCompare.asm" />
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemCopy.asm" />
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemScan.asm" />
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemSet.asm" />
+    <MASM Include="..\_external\codex\src\shared\native\base\compiler_dependent\memlib\X64\CxMemZero.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\readme.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+    <Import Project="..\tools\nasm\nasm.targets" />
+  </ImportGroup>
+</Project>
