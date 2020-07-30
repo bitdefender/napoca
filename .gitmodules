@@ -9,3 +9,6 @@
 [submodule "json"]
 	path = libraries/json
 	url = https://github.com/nlohmann/json.git
+[submodule "hvmi"]
+	path = hvmi
+	url = https://github.com/hvmi/hvmi.git
