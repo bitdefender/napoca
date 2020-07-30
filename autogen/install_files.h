@@ -1,0 +1,13 @@
+    {napocabin,      SDK_DIR_HV,             L"napoca.bin",          L"napoca.bin",          0b01000111, LD_MODID_NAPOCA_IMAGE,          "kernel"       },
+    {introcorebin,   SDK_DIR_HV,             L"introcore.dll",       L"introcore.dll",       0b00010111, LD_MODID_INTRO_CORE,            "intro"        },
+    {defaultCmdLine, SDK_DIR_HV,             L"cmdline.txt",         NULL,                   0b00000000, LD_MODID_INVALID,               NULL           },
+    {finalCmdLine,   SDK_DIR_HV,             L"cmdlinefinal.txt",    L"napoca.cfg",          0b10011111, LD_MODID_COMMAND_LINE,          "commandLine"  },
+    {efiPreloader,   SDK_DIR_EFI,            L"bdhvpreloader.efi",   L"bdhvpreloader.efi",   0b00000010, LD_MODID_INVALID,               NULL           },
+    {undefinedId,    SDK_DIR_EFI,            L"bdhvloader.efi",      L"bdhvloader.efi",      0b00000010, LD_MODID_INVALID,               NULL           },
+    {undefinedId,    SDK_DIR_EFI,            L"efi_cmdline.txt",     L"config.cfg",          0b00000010, LD_MODID_INVALID,               NULL           },
+    {efiLoaderBackup, SDK_DIR_DYNAMIC,        L"EFI\\Boot\\bootx64.efi", L"EFI\\Boot\\bootx64_bck.efi", 0b00000000, LD_MODID_INVALID,               NULL           },
+    {exceptionsbin,  SDK_DIR_UPDATES_INTRO,  L"exceptions.bin",      L"exceptions.bin",      0b00011111, LD_MODID_INTRO_EXCEPTIONS,      "exceptions"   },
+    {introliveupdtbin, SDK_DIR_UPDATES_INTRO,  L"intro_live_update.bin", L"intro_live_update.bin", 0b00011111, LD_MODID_INTRO_LIVE_UPDATE,     "liveintroupd" },
+    {undefinedId,    SDK_DIR_DYNAMIC,        NULL,                   L"original_mbr",        0b00110000, LD_MODID_ORIG_MBR,              "guestLoader"  },
+    {undefinedId,    SDK_DIR_DYNAMIC,        NULL,                   L"boot.module",         0b00010000, LD_MODID_MBR_SETTINGS,          "settings"     },
+    {undefinedId,    SDK_DIR_DYNAMIC,        NULL,                   L"recovery.module",     0b00100000, LD_MODID_MBR_SETTINGS,          "settings"     }
