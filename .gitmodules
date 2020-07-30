@@ -1,0 +1,4 @@
+[submodule "acpica"]
+	path = acpica
+	url = https://github.com/napocahv/acpica.git
+	branch = napoca-custom
