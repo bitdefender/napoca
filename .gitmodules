@@ -2,3 +2,7 @@
 	path = acpica
 	url = https://github.com/napocahv/acpica.git
 	branch = napoca-custom
+[submodule "VisualUefi"]
+	path = uefi/VisualUefi
+	url = https://github.com/napocahv/VisualUefi.git
+	branch = napoca-custom
