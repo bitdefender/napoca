@@ -28,3 +28,6 @@ ipch/
 autogen/cmdlines
 autogen
 doc
+grub-*-for-windows.zip
+grub
+install
