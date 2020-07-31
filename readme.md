@@ -63,6 +63,11 @@ The project supports only the Microsoft Visual Studio build toolchain under Wind
 	* `queryhv`
 	* `help` to see more available commands 
 
+## Debugging
+
+* You can use a debug console over serial by using `config enable serial` in winguest_sample and attaching a serial cable on the onboard COM port. Type `help` to see available commands. Note that you might need to uninstall the Windows serial drivers so that it will not try to use the COM port as well.
+* We have a failsafe that will disable the hypervisor after 3 boot attempts without also loading the user mode components. See winguest_sample commands `setfailcnt` and  `resetfailcnt` for more details.
+
 ## Credits
 
 The entire Bitdefender Napoca team.
