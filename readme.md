@@ -1,20 +1,20 @@
 # Bitdefender Napoca Hypervisor
-The Bitdefender Napoca project is a lightweight type-1 hypervisor that offers a solid foundation for building advanced security-focused functionality by providing thorough control over the CPU and memory resources of a virtualized guest operating system. 
-An example of such a project, originally built on top of Napoca, is the [HyperVisor-based Memory Introspection](https://github.com/hvmi/).
+The Bitdefender Napoca project is a lightweight type-1 hypervisor offering a solid foundation for building advanced security-focused functionality by providing control over the resources of a virtualized guest operating system. 
+An example of such a project, originally built on top of Napoca, is the [Hypervisor-based Memory Introspection](https://github.com/hvmi/).
 
 # Technology highlights
-- Being a type-1 (bare-metal) hypervisor, it offers control over and can improve the security of the primary operating system, starting right from the very beginning of the boot sequence
-- Hardware-assisted virtualization makes the CPU, memory and all the other hardware devices available to the guest operating system, guaranteeing top notch system performance
-- Allows interception of memory, MSR, IO, control register resources based on instruction emulation with customizable behavior
-- Rich internal API, including memory management, guest memory management, CPU and virtual CPU management, guest to host communication, inter-processor communication and advanced debugging
-- Can be deployed on UEFI as well as Legacy platforms by leveraging a provided UEFI loader or the GRUB boot loader
+- As a type-1 (bare-metal) hypervisor, Napoca offers control over - and can improve the security - of the primary operating system, from the start of the boot sequence
+- Hardware-assisted virtualization makes the CPU, memory, and all other hardware devices available to the guest operating system, guaranteeing top notch system performance
+- Allows interception of memory, MSR, IO, and control register resources based on instruction emulation with customizable behavior
+- Rich internal API, including memory management, guest memory management, CPU and virtual CPU management, guest to host communication, inter-processor communication, and advanced debugging
+- Can be deployed on UEFI and Legacy platforms by leveraging a provided UEFI loader or the GRUB boot loader
 - A userland DLL and a handy sample console application are provided to ease the interaction with the underlying hypervisor
 
 # Main project components
 1. Napoca - the actual hypervisor implementation
 2. Winguest - Windows user mode (winguestdll) and kernel mode (winguest) components for installing, configuring and interacting with the hypervisor
-3. Winguest_sample - user mode sample application built on top of the Winguest code to use as a starting point for developing new tools and to showcase how to integrate the API
-4. EfiPreloader - a minimal and robust EFI loader application that can ease the adoption of UEFI Secure Boot by acting as a first stage loader that can enable a custom chain of trust for the hypervisor (and the OS) boot flow
+3. Winguest_sample - user mode sample application built on top of the Winguest code to use as a starting point for developing new tools and showcase how to integrate the API
+4. EfiPreloader - a minimal and robust EFI loader application that can ease the adoption of UEFI Secure Boot by acting as a first stage loader to enable a custom chain of trust for the hypervisor (and the OS) boot flow
 5. EfiLoader - Napoca boot loader application for UEFI systems
 
 # Building and Running
