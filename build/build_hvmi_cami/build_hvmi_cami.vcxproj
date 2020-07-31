@@ -66,29 +66,29 @@
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <NMakeBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
+    <NMakeBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <NMakeBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
+    <NMakeBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <NMakeBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
+    <NMakeBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_intdir\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <NMakeBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>cd $(ProjectDir)..\..\hvmi\cami\ &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
+    <NMakeBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>cd "$(ProjectDir)..\..\hvmi\cami\" &amp;&amp; py -3 scripts\main.py --major 1 --minor 4 --build 0</NMakeReBuildCommandLine>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
