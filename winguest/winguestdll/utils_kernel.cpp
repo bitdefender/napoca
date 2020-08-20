@@ -467,7 +467,7 @@ EnumEfiPartitions(
             {
                 if (RtlEqualMemory(&info.Gpt.PartitionType, &efiPartition, sizeof(GUID)))
                 {
-                    devicePathUm = (std::wstring)L"\\\\?\\" + std::wstring(objInfo->Name.Buffer, objInfo->Name.Length);
+                    devicePathUm = (std::wstring)L"\\\\?\\" + std::wstring(objInfo->Name.Buffer, objInfo->Name.Length / sizeof(WCHAR)) + L"\\";
 
                     Partitions.push_back(devicePathUm);
                 }
