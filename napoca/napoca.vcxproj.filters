@@ -772,28 +772,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\doc.h">
-      <Filter>Doc Files</Filter>
-    </ClInclude>
-    <Text Include="..\docs\naming.txt">
-      <Filter>Doc Files</Filter>
-    </Text>
-    <Text Include="..\readme.txt">
-      <Filter>Doc Files</Filter>
-    </Text>
-    <Text Include="..\docs\stil_c_guide_2011.01.21.txt">
-      <Filter>Doc Files</Filter>
-    </Text>
-    <Text Include="..\docs\todo.txt">
-      <Filter>Doc Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Build Files">
       <UniqueIdentifier>{ec6a18f3-f2c5-4978-9c04-ccdec07816ef}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Doc Files">
-      <UniqueIdentifier>{35a4b499-4a1b-4359-b732-749e460a5bb2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{ce263f6f-ab36-4318-9cc8-0d1a4add282c}</UniqueIdentifier>

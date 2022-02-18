@@ -439,7 +439,6 @@
     <ClInclude Include="include\forcerebuild.h" />
     <ClInclude Include="..\include\hginfo.h" />
     <ClInclude Include="..\include\ver.h" />
-    <ClInclude Include="include\doc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\autogen\napoca_cmdline.c" />
@@ -641,12 +640,6 @@
     <NASM Include="kernel\_gs_checks.nasm">
       <FileType>Document</FileType>
     </NASM>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\docs\naming.txt" />
-    <Text Include="..\readme.txt" />
-    <Text Include="..\docs\stil_c_guide_2011.01.21.txt" />
-    <Text Include="..\docs\todo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">
