@@ -29,6 +29,7 @@ The project supports only the Microsoft Visual Studio build toolchain under Wind
 		* C++ ATL for latest v142 build tools with Spectre Mitigations (x86 & x64)
 		* Windows 10 SDK (10.0.18362) [1903]
 * Windows 10 WDK 10.0.18362 [1903]
+* Git
 * NASM
 	* make sure it is added to the system `PATH` variable
 * Powershell 5.0 or later [should already be installed if using Windows 10]
