@@ -1,3 +1,5 @@
+**This repository is archived and no longer maintained.**
+
 # Bitdefender Napoca Hypervisor
 The Bitdefender Napoca project is a lightweight type-1 hypervisor offering a solid foundation for building advanced security-focused functionality by providing control over the resources of a virtualized guest operating system. 
 An example of such a project, originally built on top of Napoca, is the [Hypervisor-based Memory Introspection](https://github.com/hvmi/).
@@ -75,4 +77,5 @@ The project supports only the Microsoft Visual Studio build toolchain under Wind
 ## Credits
 
 The entire Bitdefender Napoca team.
+
 
