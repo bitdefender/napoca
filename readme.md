@@ -1,4 +1,32 @@
-**This repository is archived and no longer maintained.**
+> [!WARNING]
+> THIS PROJECT IS ARCHIVED
+
+# Security Policy
+
+This project is no longer maintained and is provided for historical and research purposes only.
+
+No further development, security support, maintenance, bug fixes, or releases are planned.
+Patches and pull requests are no longer accepted.
+
+This repository contains known security vulnerabilities and **must not** be used in production or security-sensitive environments.
+
+## Known Security Issues
+
+The following vulnerabilities are known and will not be fixed:
+
+- CVE-2026-10046 — Out-of-bounds write in Napoca BIOS INT 0x15 E820 memory map handler (`napoca/guests/bios_handlers.c`)
+- CVE-2026-10047 — Out-of-bounds write in Napoca real-mode hook handler via guest-controlled SS:SP (`napoca/kernel/handler.c`)
+
+Additional security issues may exist.
+
+## Reporting Vulnerabilities
+
+Security vulnerability reports, bug reports, and patch submissions are no longer accepted or reviewed.
+Do not expect responses, triage, validation, fixes, or coordinated disclosure activities.
+
+Known vulnerabilities may remain permanently unpatched.
+
+If you choose to use, study, fork, or redistribute this codebase, you do so at your own risk and are solely responsible for any security maintenance or remediation.
 
 # Bitdefender Napoca Hypervisor
 The Bitdefender Napoca project is a lightweight type-1 hypervisor offering a solid foundation for building advanced security-focused functionality by providing control over the resources of a virtualized guest operating system. 
